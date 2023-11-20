@@ -49,7 +49,7 @@ public class CamelCaseNaming {
             System.err.println("Error: Invalid number of arguments. Please provide exactly two arguments. "
                     + args_detected + " was detected.");
 
-        // Close the scanner
+        // Close Scanner
         sc.close();
     }
 }
