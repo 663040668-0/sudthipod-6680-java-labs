@@ -72,7 +72,7 @@ public class SimpleCalculator {
             System.err.println("Error: Invalid number of arguments. Please provide exactly three arguments. "
                     + args_detected + " was detected.");
 
-        // Close the scanner
+        // Close Scanner
         sc.close();
     }
 }
