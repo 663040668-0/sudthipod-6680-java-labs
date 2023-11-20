@@ -29,7 +29,7 @@ public class Patient {
 
         // Receive user's input and split the string
         System.out.print("Patient infomation: ");
-        String[] tokenizedInput = sc.nextLine().split(" (?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)"); // The fastest way
+        String[] tokenizedInput = sc.nextLine().split(" (?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)"); // The easiest way
 
         // Check input requirements
         int args_detected = tokenizedInput.length;
