@@ -1,4 +1,4 @@
-package wanaprom.sudthipod.lab2.Upgraded;
+package wanaprom.sudthipod.lab2.upgraded;
 
 /**
  * The Patient Program:
