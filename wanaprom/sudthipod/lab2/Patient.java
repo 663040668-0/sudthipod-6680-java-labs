@@ -15,33 +15,16 @@ package wanaprom.sudthipod.lab2;
  * Sec : 2
  */
 
-// Import classes or packages
-import java.util.Scanner;
-
-// Main method
+// Main class
 public class Patient {
+    // Main method
     public static void main(String[] args) {
-        // Declare variables and constants
-        final byte ARGS_COUNT = 3;
-
-        // Initial the input receiver
-        Scanner sc = new Scanner(System.in);
-
-        // Receive user's input and split the string
-        System.out.print("Patient infomation: ");
-        String[] tokenizedInput = sc.nextLine().split(" (?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)"); // The easiest way
-
         // Check input requirements
-        int args_detected = tokenizedInput.length;
-        if (args_detected == ARGS_COUNT) {
-            System.out.println("Patient's name : " + tokenizedInput[0].substring(1, tokenizedInput[0].length() - 1));
-            System.out.println("Age : " + tokenizedInput[1]);
-            System.out.println("Gender : " + tokenizedInput[2]);
+        if (args.length == 3) {
+            System.out.println("Patient's name : " + args[0]);
+            System.out.println("Age : " + args[1]);
+            System.out.println("Gender : " + args[2]);
         } else
-            System.err.println("Error: Invalid number of arguments. Please provide exactly three arguments. "
-                    + args_detected + " was detected.");
-
-        // Close Scanner
-        sc.close();
+            System.err.println("Error: Invalid number of arguments. Please provide exactly three arguments. " + args.length + " was detected.");
     }
 }

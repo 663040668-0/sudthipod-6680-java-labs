@@ -1,4 +1,4 @@
-package wanaprom.sudthipod.lab2;
+package wanaprom.sudthipod.lab2.Upgraded;
 
 /**
  * The SimpleCalculator Program:
@@ -18,16 +18,30 @@ package wanaprom.sudthipod.lab2;
  * Sec : 2
  */
 
+// Import classes or packages
+import java.util.Scanner;
+
 // Main class
 public class SimpleCalculator {
     // Main method
     public static void main(String[] args) {
+        // Declare variables and constants
+        final byte ARGS_COUNT = 3;
+
+        // Initial the input receiver
+        Scanner sc = new Scanner(System.in);
+
+        // Receive user's input and split the string
+        System.out.print("Input: ");
+        String[] tokenizedInput = sc.nextLine().split(" ");
+
         // Check input requirements
-        if (args.length == 3) {
+        int args_detected = tokenizedInput.length;
+        if (args_detected == ARGS_COUNT) {
             // Declare variables
-            int a = Integer.parseInt(args[0]);
-            int b = Integer.parseInt(args[1]);
-            String operator = args[2];
+            int a = Integer.parseInt(tokenizedInput[0]);
+            int b = Integer.parseInt(tokenizedInput[1]);
+            String operator = tokenizedInput[2];
 
             // Check the operator
             switch (operator) {
@@ -56,6 +70,9 @@ public class SimpleCalculator {
             }
         } else
             System.err.println("Error: Invalid number of arguments. Please provide exactly three arguments. "
-                    + args.length + " was detected.");
+                    + args_detected + " was detected.");
+
+        // Close Scanner
+        sc.close();
     }
 }

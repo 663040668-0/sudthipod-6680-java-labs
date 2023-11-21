@@ -1,4 +1,4 @@
-package wanaprom.sudthipod.lab2;
+package wanaprom.sudthipod.lab2.Upgraded;
 
 /**
  * The CamelCaseNaming Program:
@@ -13,6 +13,10 @@ package wanaprom.sudthipod.lab2;
  * ID : 663040668-0
  * Sec : 2
  */
+
+// Import necessary packages
+import java.util.Scanner;
+
 // Main class
 public class CamelCaseNaming {
     // Conversion method
@@ -22,15 +26,30 @@ public class CamelCaseNaming {
 
     // Main method
     public static void main(String[] args) {
+        // Declare variables and constants
+        final byte ARGS_COUNT = 2;
+
+        // Initial the input receiver
+        Scanner sc = new Scanner(System.in);
+
+        // Receive user's input and split the string
+        System.out.print("Input: ");
+        String[] tokenizedInput = sc.nextLine().split(" ");
+
         // Check input requirements
-        if (args.length == 2) {
+        int args_detected = tokenizedInput.length;
+        if (args_detected == ARGS_COUNT) {
             // Declare variables
-            String textA = args[0];
-            String textB = args[1];
+            String textA = tokenizedInput[0];
+            String textB = tokenizedInput[1];
 
             // Display output
             System.out.println("Camel Case Result: " + toCamelCase(textA) + toCamelCase(textB));
         } else
-            System.err.println("Error: Invalid number of arguments. Please provide exactly two arguments. " + args.length + " was detected.");
+            System.err.println("Error: Invalid number of arguments. Please provide exactly two arguments. "
+                    + args_detected + " was detected.");
+
+        // Close Scanner
+        sc.close();
     }
 }
