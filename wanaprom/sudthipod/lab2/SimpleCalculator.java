@@ -32,20 +32,20 @@ public class SimpleCalculator {
             String operator = args[2];
 
             // Check the operator
-            switch (operator) {
-                case "+":
+            switch (operator.charAt(0)) {
+                case '+':
                     System.out.println(a + operator + b + "=" + (a + b));
                     break;
 
-                case "-":
+                case '-':
                     System.out.println(a + operator + b + "=" + (a - b));
                     break;
 
-                case "x":
+                case 'x':
                     System.out.println(a + operator + b + "=" + (a * b));
                     break;
 
-                case "/":
+                case '/':
                     if (b != 0)
                         System.out.println(a + operator + b + "=" + (a / b));
                     else
