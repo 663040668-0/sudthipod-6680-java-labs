@@ -4,11 +4,11 @@ package wanaprom.sudthipod.lab2.upgraded;
  * The CamelCaseNaming Program:
  * This program accepts two arguments then convert to a CamelCaseNaming string
  * Expected input: <textA> <textB>
- * 
+ *
  * Assume <textA> = "abcd" and <textB> = "ABCD"
  * Output expected:
  * Camel Case Result: AbcdAbcd
- * 
+ *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
  * Sec : 2
