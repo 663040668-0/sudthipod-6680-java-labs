@@ -9,7 +9,7 @@ package wanaprom.sudthipod.lab2;
  * Patient's name : <patientName>
  * Age : <patientAge>
  * Gender : <patientGender>
- * 
+ *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
  * Sec : 2

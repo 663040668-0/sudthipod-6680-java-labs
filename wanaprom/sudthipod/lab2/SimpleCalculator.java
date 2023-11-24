@@ -7,12 +7,12 @@ package wanaprom.sudthipod.lab2;
  * where <a> and <b> are "integers"
  * and <operator> is a Mathematic operator.
  * Valid operators: ( '+', '-', 'x', '/' )
- * 
+ *
  * Expected output:
  * <a><operator><b>=<result>
- * 
+ *
  * Exclusive operators and division by zero are the exceptions
- * 
+ *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
  * Sec : 2

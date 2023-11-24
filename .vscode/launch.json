@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "",
+            "args": "${command:SpecifyProgramArgs}"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "Hello",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "CamelCaseNaming",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.CamelCaseNaming",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "Patient",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.Patient",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "PrimitiveDataType",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.PrimitiveDataType",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "SimpleCalculator",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.SimpleCalculator",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "CamelCaseNaming(1)",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.upgraded.CamelCaseNaming",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "Patient(1)",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.upgraded.Patient",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "PrimitiveDataType(1)",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.upgraded.PrimitiveDataType",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        },
+        {
+            "type": "java",
+            "name": "SimpleCalculator(1)",
+            "request": "launch",
+            "mainClass": "wanaprom.sudthipod.lab2.upgraded.SimpleCalculator",
+            "projectName": "sudthipod-6680-java-labs_94bfb967"
+        }
+    ]
+}

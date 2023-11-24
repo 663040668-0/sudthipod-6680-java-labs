@@ -4,7 +4,7 @@ package wanaprom.sudthipod.lab2;
  * The PrimitiveDataType Program:
  * This program takes no argument but need to provide infomation into the variables
  * which are <studentId> and <firstName>
- * 
+ *
  * and generates output:
  * Student ID : <studentId>
  * First Name : <firstName>
@@ -16,7 +16,7 @@ package wanaprom.sudthipod.lab2;
  * Double Value : <lastEightDigitsDecimal>
  * Char Value : <firstLetter>
  * Boolean Value : <islastDigitOdd>
- * 
+ *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
  * Sec : 2
