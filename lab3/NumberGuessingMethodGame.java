@@ -1,7 +1,7 @@
 package lab3;
 
 /**
- * The NumberGuessingGame:
+ * The NumberGuessingMethodGame:
  * This game accepts an integer argument in the range from 1 to 20 (inclusive).
  * The game will random an integer in the aforementioned range.
  * Players need to input the exact same integer in order to win the game.
@@ -19,16 +19,24 @@ import java.lang.Math; // For randomization and judgement
 import java.util.Scanner; // For input
 import java.util.InputMismatchException; // For handle exception
 
-public class NumberGuessingGame {
-    public static void main(String[] args) {
-        // Declare variables and constants
-        final int MIN_NUM = 1;
-        final int MAX_NUM = 20;
-        final int MAX_TRIES = 5;
-        Scanner input = new Scanner(System.in);
-        int realAns = MIN_NUM + (int)( Math.random() * (MAX_NUM - MIN_NUM + 1) );
-        int numTries = 0;
+public class NumberGuessingMethodGame {
+    // Declare variables and constants
+    final static int MIN_NUM = 1;
+    final static int MAX_NUM = 20;
+    final static int MAX_TRIES = 5;
+    Scanner input = new Scanner(System.in);
+    int numTries = 0;
+    static int realAns;
 
+    // Number randomization method
+    static int genAnswer() {
+        return MIN_NUM + (int) (Math.random() * (MAX_NUM - MIN_NUM + 1));
+    }
+
+
+
+    // Main method
+    public static void main(String[] args) {
         // Start the game
         System.out.println("Welcome to a number guessing game!");
         while (true) {
@@ -57,7 +65,7 @@ public class NumberGuessingGame {
                 System.out.println("Try a lower number!"); 
 
             // Run out of tries number but still didn't win
-            if (numTries >= MAX_TRIES) {
+            if (numTries >= MAX_TRY) {
                 System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
                 System.out.println("The answer is " + realAns);
                 break;
