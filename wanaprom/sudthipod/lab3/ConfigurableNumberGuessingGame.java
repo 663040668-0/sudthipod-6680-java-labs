@@ -2,10 +2,11 @@ package wanaprom.sudthipod.lab3;
 
 /**
  * The ConfigurableNumberGuessingGame:
- * This game accepts an integer argument in the range from 1 to 20 (inclusive).
- * The game will random an integer in the aforementioned range.
+ * This game starts with configuration for a player to choose min value, max value, and maximum number of tries.
+ * The game accepts an integer input in the optional range provided in the configuration (inclusive).
+ * The game will random an integer in the provided range.
  * Players need to input the exact same integer in order to win the game.
- * Players have maximum try attempts of 5. Otherwise, they'll lose the game.
+ * If the players have reach their maximum try attempts, they lose the game.
  *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
