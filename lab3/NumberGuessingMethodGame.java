@@ -21,22 +21,20 @@ import java.util.InputMismatchException; // For handle exception
 
 public class NumberGuessingMethodGame {
     // Declare variables and constants
+    static int realAns;
+    static Scanner input = new Scanner(System.in);
+    static int numTries = 0;
     final static int MIN_NUM = 1;
     final static int MAX_NUM = 20;
     final static int MAX_TRIES = 5;
-    Scanner input = new Scanner(System.in);
-    int numTries = 0;
-    static int realAns;
 
     // Number randomization method
-    static int genAnswer() {
-        return MIN_NUM + (int) (Math.random() * (MAX_NUM - MIN_NUM + 1));
+    static void genAnswer() {
+        realAns = MIN_NUM + (int)( Math.random() * (MAX_NUM - MIN_NUM + 1) );
     }
 
-
-
-    // Main method
-    public static void main(String[] args) {
+    // Gameplay method
+    static void playgame() {
         // Start the game
         System.out.println("Welcome to a number guessing game!");
         while (true) {
@@ -53,7 +51,7 @@ public class NumberGuessingMethodGame {
 
             // Add number of tries
             numTries++;
-            
+
             // Judge the answer
             if (userAns == realAns) { // Win
                 System.out.println("Congratulations!");
@@ -62,17 +60,23 @@ public class NumberGuessingMethodGame {
             } else if (userAns < realAns) // Lower than the real answer
                 System.out.println("Try a higher number!");
             else // Higher than the real answer
-                System.out.println("Try a lower number!"); 
+                System.out.println("Try a lower number!");
 
             // Run out of tries number but still didn't win
-            if (numTries >= MAX_TRY) {
+            if (numTries >= MAX_TRIES) {
                 System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
                 System.out.println("The answer is " + realAns);
                 break;
             }
         }
 
-        //Close the input
+        // Close the input
         input.close();
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        genAnswer();
+        playgame();
     }
 }
