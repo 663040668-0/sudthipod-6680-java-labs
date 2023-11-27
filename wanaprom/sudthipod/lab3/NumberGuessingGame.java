@@ -15,7 +15,7 @@ package wanaprom.sudthipod.lab3;
  */
 
 // Import necessary packages
-import java.lang.Math; // For randomization and judgement
+import java.lang.Math; // For randomization
 import java.util.Scanner; // For input
 import java.util.InputMismatchException; // For handle exception
 

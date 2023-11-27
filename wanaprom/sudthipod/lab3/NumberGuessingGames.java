@@ -20,7 +20,7 @@ import java.lang.Math; // For randomization
 import java.util.Scanner; // For input
 import java.util.InputMismatchException; // For handle exception
 
-public class ConfigurableNumberGuessingGame {
+public class NumberGuessingGames {
     // Declare variables and constants
     static int realAns, min, max, numTries, maxTries;
     static Scanner input = new Scanner(System.in);
