@@ -1,4 +1,4 @@
-package lab3;
+package wanaprom.sudthipod.lab3;
 
 /**
  * The NumberGuessingMethodGame:
