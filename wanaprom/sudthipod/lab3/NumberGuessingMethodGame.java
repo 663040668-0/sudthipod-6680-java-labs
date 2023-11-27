@@ -34,7 +34,7 @@ public class NumberGuessingMethodGame {
     }
 
     // Gameplay method
-    static void playgame() {
+    static void playGame() {
         // Start the game
         System.out.println("Welcome to a number guessing game!");
         while (true) {
@@ -77,6 +77,6 @@ public class NumberGuessingMethodGame {
     // Main method
     public static void main(String[] args) {
         genAnswer();
-        playgame();
+        playGame();
     }
 }

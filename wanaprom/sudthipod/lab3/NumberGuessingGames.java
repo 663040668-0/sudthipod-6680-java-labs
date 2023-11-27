@@ -1,12 +1,13 @@
 package wanaprom.sudthipod.lab3;
 
 /**
- * The ConfigurableNumberGuessingGame:
- * This game starts with configuration for a player to choose min value, max value, and maximum number of tries.
+ * The NumberGuessingGames:
+ * This games sequence starts with configuration for a player to choose min value, max value, and maximum number of tries.
  * The game accepts an integer input in the optional range provided in the configuration (inclusive).
  * The game will random an integer in the provided range.
  * Players need to input the exact same integer in order to win the game.
  * If the players have reach their maximum try attempts, they lose the game.
+ * Player can either decide to replay the game or quit by interact with the prompt.
  *
  * Author : Sudthipod Wanaprom
  * ID : 663040668-0
@@ -26,14 +27,44 @@ public class NumberGuessingGames {
     static Scanner input = new Scanner(System.in);
 
     // Receive input and handle error
-    static int getUserInput(String text) {
+    static int getUserInput(String text, int condition) {
         while (true) {
             try {
                 System.out.print(text);
-                return input.nextInt();
+                int receivedInt = input.nextInt();
+
+                // Check for required condition
+                switch (condition) {
+                    case 1: // Check if max isn't less than min
+                        if (receivedInt < min) {
+                            System.err.println("The max value must be at least equal to the min value.");
+                            continue;
+                        }
+                        break;
+
+                    case 2: // Check for positive integer
+                        if (receivedInt <= 0) {
+                            System.err.println("The maximum number of  tries must be greater than 0.");
+                            continue;
+                        }
+                        break;
+
+                    case 3: // Check if it's in the min and max range
+                        if (receivedInt < min || receivedInt > max) {
+                            System.err.println("The number must be between " + min + " and " + max + ".");
+                            continue;
+                        }
+                        break;
+                
+                    default: // Check nothing
+                        break;
+                }
+                
+                // Normally return value
+                return receivedInt;
             } catch (InputMismatchException e) {
                 System.err.println("Error: Please enter an integer.");
-                input.nextLine();
+                input.nextLine(); // Reset the input to avoid overflow
                 continue;
             }
         }
@@ -41,28 +72,9 @@ public class NumberGuessingGames {
 
     // Game configuration method
     static void configure() {
-        // Get any integer for min value
-        min = getUserInput("Enter the min value: ");
-
-        // Max value must equal or greater than min
-        while (true) {
-            max = getUserInput("Enter the max value: ");
-            if (max < min) {
-                System.err.println("The max value must be at least equal to the min value.");
-                continue;
-            } else
-                break;
-        }
-    
-        // Maximum number of tries must be an positive integer
-        while (true) {
-            maxTries = getUserInput("Enter the maximum number of tries: ");
-            if (maxTries <= 0) {
-                System.err.println("The maximum number of  tries must be greater than 0.");
-                continue;
-            } else
-                break;
-        }
+        min = getUserInput("Enter the min value: ", 0);
+        max = getUserInput("Enter the max value: ", 1);
+        maxTries = getUserInput("Enter the maximum number of tries: ", 2);
     }
 
     // Number randomization method
@@ -71,20 +83,12 @@ public class NumberGuessingGames {
     }
 
     // Gameplay method
-    static void playgame() {
+    static void playGame() {
         // Start the game
-        System.out.println("Welcome to a number guessing game!");
         while (true) {
             // Receive input
             int userAns;
-            while (true) {
-                userAns = getUserInput("Enter an integer between " + min + " and " + max + "\n> ");
-                if (userAns < min || userAns > max) {
-                    System.err.println("The number must be between " + min + " and " + max + ".");
-                    continue;
-                } else
-                    break;
-            }
+            userAns = getUserInput("Enter an integer between " + min + " and " + max + "\n> ", 3);
 
             // Add number of tries
             numTries++;
@@ -106,15 +110,34 @@ public class NumberGuessingGames {
                 break;
             }
         }
+    }
+    
+    //Games sequence method
+    static void playGames() {
+        //Start the games sequence
+        while (true) {
+            System.out.println("Welcome to a number guessing game!");
+            numTries = 0; // Reset tries amount
+            playGame();
 
-        // Close the input
-        input.close();
+            //Replay prompt
+            System.out.print("Want to play again? (Y or y): ");
+            input.nextLine();
+            String promptAnswer = input.nextLine().toLowerCase();
+            if (promptAnswer.equals("y"))
+                continue;
+            else {
+                System.out.println("Thanks you for playing our games. Bye! ;P");
+                input.close(); // Close the input
+                break;
+            }
+        }
     }
 
     // Main method
     public static void main(String[] args) {
         configure();
         genAnswer();
-        playgame();
+        playGames();
     }
 }

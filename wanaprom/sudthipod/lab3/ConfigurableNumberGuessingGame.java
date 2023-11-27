@@ -71,7 +71,7 @@ public class ConfigurableNumberGuessingGame {
     }
 
     // Gameplay method
-    static void playgame() {
+    static void playGame() {
         // Start the game
         System.out.println("Welcome to a number guessing game!");
         while (true) {
@@ -115,6 +115,6 @@ public class ConfigurableNumberGuessingGame {
     public static void main(String[] args) {
         configure();
         genAnswer();
-        playgame();
+        playGame();
     }
 }
