@@ -16,6 +16,8 @@ package wanaprom.sudthipod.lab3;
  * Lastest Update : 01/12/2023
  */
 
+// Import necessary packages
+import java.lang.Math; // For randomization
 import java.util.InputMismatchException; // For handle exception
 import java.util.Scanner; // For input
 
