@@ -11,13 +11,11 @@ package wanaprom.sudthipod.lab3;
  * ID : 663040668-0
  * Sec : 2
  *
- * Lastest Update : 27/11/2023
+ * Lastest Update : 01/12/2023
  */
 
-// Import necessary packages
-import java.lang.Math; // For randomization
-import java.util.Scanner; // For input
 import java.util.InputMismatchException; // For handle exception
+import java.util.Scanner; // For input
 
 public class NumberGuessingGame {
     public static void main(String[] args) {
@@ -47,18 +45,19 @@ public class NumberGuessingGame {
             numTries++;
             
             // Judge the answer
+            String isPlural = (numTries > 1) ? "s" : ""; // Concastenate "s" if tried more than 1 time
             if (userAns == realAns) { // Win
                 System.out.println("Congratulations!");
-                System.out.println("You have tried " + numTries + " times.");
+                System.out.println("You have tried " + numTries + " time" + isPlural + ".");
                 break;
             } else if (userAns < realAns) // Lower than the real answer
                 System.out.println("Try a higher number!");
             else // Higher than the real answer
-                System.out.println("Try a lower number!"); 
+                System.out.println("Try a lower number!");
 
             // Run out of tries number but still didn't win
             if (numTries >= MAX_TRIES) {
-                System.out.println("You have tried " + numTries + " times. You ran out of guesses.");
+                System.out.println("You have tried " + numTries + " time" + isPlural + ". You ran out of guesses.");
                 System.out.println("The answer is " + realAns);
                 break;
             }
