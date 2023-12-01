@@ -12,6 +12,11 @@
             "args": "${command:SpecifyProgramArgs}"
         },
         {
+            "type": "jdk",
+            "request": "launch",
+            "name": "Launch Java App"
+        },
+        {
             "type": "java",
             "name": "Current File",
             "request": "launch",
