@@ -16,9 +16,8 @@ package wanaprom.sudthipod.lab3;
  */
 
 // Import necessary packages
-import java.lang.Math; // For randomization
-import java.util.InputMismatchException; // For handle exception
-import java.util.Scanner; // For input
+import java.util.InputMismatchException; // For randomization
+import java.util.Scanner; // For handle exception
 
 public class ConfigurableNumberGuessingGame {
     // Declare variables and constants
@@ -34,7 +33,6 @@ public class ConfigurableNumberGuessingGame {
             } catch (InputMismatchException e) {
                 System.err.println("Error: Please enter an integer.");
                 input.nextLine();
-                continue;
             }
         }
     }
@@ -49,7 +47,6 @@ public class ConfigurableNumberGuessingGame {
             max = getUserInput("Enter the max value: ");
             if (max < min) {
                 System.err.println("The max value must be at least equal to the min value.");
-                continue;
             } else
                 break;
         }
@@ -59,7 +56,6 @@ public class ConfigurableNumberGuessingGame {
             maxTries = getUserInput("Enter the maximum number of tries: ");
             if (maxTries <= 0) {
                 System.err.println("The maximum number of  tries must be greater than 0.");
-                continue;
             } else
                 break;
         }
@@ -81,7 +77,6 @@ public class ConfigurableNumberGuessingGame {
                 userAns = getUserInput("Enter an integer between " + min + " and " + max + "\n> ");
                 if (userAns < min || userAns > max) {
                     System.err.println("The number must be between " + min + " and " + max + ".");
-                    continue;
                 } else
                     break;
             }

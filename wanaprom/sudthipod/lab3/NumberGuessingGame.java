@@ -15,17 +15,18 @@ package wanaprom.sudthipod.lab3;
  */
 
 // Import necessary packages
-import java.lang.Math; // For randomization
-import java.util.InputMismatchException; // For handle exception
-import java.util.Scanner; // For input
+import java.util.InputMismatchException; // For randomization
+import java.util.Scanner; // For handle exception
 
 public class NumberGuessingGame {
+    // Declare input variable
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         // Declare variables and constants
         final int MIN_NUM = 1;
         final int MAX_NUM = 20;
         final int MAX_TRIES = 5;
-        Scanner input = new Scanner(System.in);
         int realAns = MIN_NUM + (int)( Math.random() * (MAX_NUM - MIN_NUM + 1) );
         int numTries = 0;
 

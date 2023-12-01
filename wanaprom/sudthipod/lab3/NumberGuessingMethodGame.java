@@ -15,9 +15,8 @@ package wanaprom.sudthipod.lab3;
  */
 
 // Import necessary packages
-import java.lang.Math; // For randomization
-import java.util.InputMismatchException; // For handle exception
-import java.util.Scanner; // For input
+import java.util.InputMismatchException; // For randomization
+import java.util.Scanner; // For handle exception
 
 public class NumberGuessingMethodGame {
     // Declare variables and constants
