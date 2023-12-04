@@ -7,7 +7,8 @@ import java.util.InputMismatchException; // For handle exception
 import java.util.Scanner; // For user input
 
 /**
- * The GuessNumberGamesV3: This game sequence starts with configuration for a player to choose the minimum value, maximum value, and maximum number of tries.
+ * The GuessNumberGamesV3:
+ * This game sequence starts with configuration for a player to choose the minimum value, maximum value, and maximum number of tries.
  * The game accepts an integer input within the provided range in the configuration (inclusive).
  * The game will generate a random integer within the range received in the configuration.
  * Players need to input the exact same integer in order to win the game.
