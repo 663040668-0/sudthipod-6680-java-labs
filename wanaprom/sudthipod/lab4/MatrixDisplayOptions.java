@@ -20,6 +20,7 @@ public class MatrixDisplayOptions {
     static int selectedOption, rowsNum, columnsNum;
     static int[][] matrix; // Create a empty matrix as a 2D array
 
+    // Get user input
     static int getUserInputInt(String text) {
         while (true) {
             try {
@@ -34,6 +35,7 @@ public class MatrixDisplayOptions {
         }
     }
 
+    // Create a matrix
     static void makeMatrix() {
         while (true) {
             // Get the number of rows and columns at once if it is a diagonal matrix,
@@ -50,6 +52,16 @@ public class MatrixDisplayOptions {
             }
         }
         matrix = new int[rowsNum][columnsNum]; // Create a matrix as a 2D array
+    }
+
+    // Display the matrix
+    static void displayMatrix() {
+        for (int i = 0; i < rowsNum; i++) {
+            for (int j = 0; j < columnsNum; j++) {
+                System.out.print(matrix[i][j] + " "); // Print each element inline
+            }
+            System.out.println(); // Move to next line
+        }
     }
 
     public static void main(String[] args) {
@@ -73,7 +85,7 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ");
                             }
                         }
-                        return;
+                        break;
                     }
                     case 2 -> { // Random Numbers (0-9)
                         for (int i = 0; i < rowsNum; i++) {
@@ -81,7 +93,7 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = (int) (Math.random() * 10); // Random number from 0 to 9
                             }
                         }
-                        return;
+                        break;
                     }
                     case 3 -> { // All Zeros
                         // Do nothing because the matrix is already empty
@@ -92,13 +104,13 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = 1;
                             }
                         }
-                        return;
+                        break;
                     }
                     case 5 -> { // Diagonal Matrix
                         for (int i = 0; i < rowsNum; i++) {
                             matrix[i][i] = 1; // matrix[i][i] = 1, otherwise 0
                         }
-                        return;
+                        break;
                     }
                     default -> {
                         System.err.println("Unknown error. Please try again.");
@@ -112,11 +124,6 @@ public class MatrixDisplayOptions {
         }
 
         // Display the matrix
-        for (int i = 0; i < rowsNum; i++) {
-            for (int j = 0; j < columnsNum; j++) {
-                System.out.print(matrix[i][j] + " "); // Print each element inline
-            }
-            System.out.println(); // Move to next line
-        }
+        displayMatrix();
     }
 }
