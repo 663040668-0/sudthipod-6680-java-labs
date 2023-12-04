@@ -4,18 +4,19 @@ import java.util.InputMismatchException; // For handle exception
 import java.util.Scanner; // For user input
 
 /**
- * The MatrixDisplayOptions program:
+ * The MatrixOperations program:
  * This program allows the user to create a matrix from options
- * Then display the matrix
+ * Display the matrix
+ * and matrix operations will be performed by the user's choice
  *
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 04/12/2023
+ * Latest Update: 05/12/2023
  */
 
-public class MatrixDisplayOptions {
+public class MatrixOperations {
     static Scanner input = new Scanner(System.in);
     static int selectedOption, rowsNum, columnsNum;
     static int[][] matrix; // Create a empty matrix as a 2D array
@@ -65,7 +66,7 @@ public class MatrixDisplayOptions {
     }
 
     public static void main(String[] args) {
-        // Print available options
+        // Print available initialization options
         System.out.println("Select matrix initialization method:");
         System.out.println("1. User Input");
         System.out.println("2. Random Numbers");
@@ -73,7 +74,7 @@ public class MatrixDisplayOptions {
         System.out.println("4. All Ones");
         System.out.println("5. Diagonal Matrix");
 
-        // Let the user select an option
+        // Let the user select an initialization method and create the matrix
         while (true) {
             selectedOption = getUserInputInt("Enter choice (1-5): ");
             if (selectedOption >= 1 && selectedOption <= 5) {
@@ -112,6 +113,60 @@ public class MatrixDisplayOptions {
                             matrix[i][i] = 1; // matrix[i][i] = 1, otherwise 0
                         }
                         break;
+                    }
+                    default -> {
+                        System.err.println("Unknown error. Please try again.");
+                        continue;
+                    }
+                }
+                break; // Exit the loop
+            } else {
+                System.err.println("Invalid choice. Please try again.");
+            }
+        }
+
+        // Print available operations
+        System.out.println("Choose an operation:");
+        System.out.println("1. Transpose Matrix");
+        System.out.println("2. Row and Column Sums");
+        System.out.println("3. Find Max/Min Value");
+        System.out.println("4. Diagonal Display");
+        System.out.println("5. Exit");
+
+        // Let the user select an initialization method and create the matrix
+        while (true) {
+            selectedOption = getUserInputInt("Enter choice (1-5): ");
+            if (selectedOption >= 1 && selectedOption <= 5) {
+                makeMatrix();
+                switch (selectedOption) {
+                    case 1 -> { // User Input
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ");
+                            }
+                        }
+                    }
+                    case 2 -> { // Random Numbers (0-9)
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = (int) (Math.random() * 10); // Random number from 0 to 9
+                            }
+                        }
+                    }
+                    case 3 -> { // All Zeros
+                        // Do nothing because the matrix is already empty
+                    }
+                    case 4 -> { // All Ones
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = 1;
+                            }
+                        }
+                    }
+                    case 5 -> { // Diagonal Matrix
+                        for (int i = 0; i < rowsNum; i++) {
+                            matrix[i][i] = 1; // matrix[i][i] = 1, otherwise 0
+                        }
                     }
                     default -> {
                         System.err.println("Unknown error. Please try again.");
