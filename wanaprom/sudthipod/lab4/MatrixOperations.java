@@ -173,6 +173,7 @@ public class MatrixOperations {
                         continue;
                     }
                 }
+                
                 break; // Exit the loop
             } else {
                 System.err.println("Invalid choice. Please try again.");

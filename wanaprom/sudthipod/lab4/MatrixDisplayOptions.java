@@ -85,7 +85,6 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ");
                             }
                         }
-                        break;
                     }
                     case 2 -> { // Random Numbers (0-9)
                         for (int i = 0; i < rowsNum; i++) {
@@ -93,11 +92,9 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = (int) (Math.random() * 10); // Random number from 0 to 9
                             }
                         }
-                        break;
                     }
                     case 3 -> { // All Zeros
                         // Do nothing because the matrix is already empty
-                        break;
                     }
                     case 4 -> { // All Ones
                         for (int i = 0; i < rowsNum; i++) {
@@ -105,19 +102,18 @@ public class MatrixDisplayOptions {
                                 matrix[i][j] = 1;
                             }
                         }
-                        break;
                     }
                     case 5 -> { // Diagonal Matrix
                         for (int i = 0; i < rowsNum; i++) {
                             matrix[i][i] = 1; // matrix[i][i] = 1, otherwise 0
                         }
-                        break;
                     }
                     default -> {
                         System.err.println("Unknown error. Please try again.");
                         continue;
                     }
                 }
+                
                 break; // Exit the loop
             } else {
                 System.err.println("Invalid choice. Please try again.");
