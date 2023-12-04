@@ -95,7 +95,6 @@ public class GuessNumberGamesV3 {
         min = getUserInputInt("Enter the min value: ", 0);
         max = getUserInputInt("Enter the max value: ", 1);
         maxTries = getUserInputInt("Enter the maximum number of tries: ", 2);
-        leastGuesses = maxTries; // Initialize the least guesses
     }
 
     // Generate answer
@@ -107,7 +106,8 @@ public class GuessNumberGamesV3 {
         guesses = Arrays.copyOf(guesses, numTries); // Subset the array to the number of tries
         totalGames++; // Update the total games
         totalGuesses += numTries; // Update the total guesses
-        leastGuesses = Math.min(leastGuesses, numTries); // Update the least guesses
+        // If win, update least guesses or initialize value if win for the first time
+        leastGuesses = (win) ? ((leastGuesses == 0) ? numTries : Math.min(leastGuesses, numTries)) : leastGuesses;
         while (true) { 
             String choice = getUserInputString("Enter 'a' to list all guesses, 'g' for specific guess, or any other key to quit the session: ");
             switch (choice) { // Switch use String.equals(). So, this is available in older Java versions
@@ -177,7 +177,7 @@ public class GuessNumberGamesV3 {
         System.out.println("Total wins: " + totalWins);
         System.out.println("Win rate: " + NumberFormat.getPercentInstance().format((double) totalWins / totalGames));
         System.out.println("Average guesses per game: " + new DecimalFormat("#.#").format((double) totalGuesses / totalGames));
-        System.out.println("High score (Least guesses): " + leastGuesses);
+        System.out.println("High score (Least guesses): " + ((leastGuesses != 0) ? leastGuesses : "N/A"));
     }
 
     // Play games
