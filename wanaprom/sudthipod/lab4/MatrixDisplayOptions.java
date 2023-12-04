@@ -4,8 +4,9 @@ import java.util.InputMismatchException; // For handle exception
 import java.util.Scanner; // For user input
 
 /**
- * The MatrixDisplay program:
- * This program display a matrix of any size with user input in each element
+ * The MatrixDisplayOptions program:
+ * This program allows the user to create a matrix from options
+ * Then display the matrix
  *
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
@@ -14,7 +15,7 @@ import java.util.Scanner; // For user input
  * Latest Update: 04/12/2023
  */
 
-public class MatrixDisplay {
+public class MatrixDisplayOptions {
     static Scanner input = new Scanner(System.in);
 
     static int getUserInputInt(String text) {
@@ -33,6 +34,9 @@ public class MatrixDisplay {
     public static void main(String[] args) {
         int rowsNum, columnsNum;
         while (true) { 
+            int selectedOption = getUserInputInt("Enter choic (1-5): ");
+            switch ()
+            // Get the number of rows and columns
             rowsNum = getUserInputInt("Enter the number of rows: ");
             columnsNum = getUserInputInt("Enter the number of columns: ");
             // Check if the number of rows and columns are greater than 0
