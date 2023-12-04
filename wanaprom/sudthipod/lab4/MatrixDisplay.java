@@ -48,7 +48,7 @@ public class MatrixDisplay {
         // Row-wise input iteration
         for (int i = 0; i < rowsNum; i++) {
             for (int j = 0; j < columnsNum; j++) {
-                matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ",0);
+                matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ");
             }
         }
 

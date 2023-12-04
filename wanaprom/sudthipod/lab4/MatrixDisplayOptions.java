@@ -17,6 +17,8 @@ import java.util.Scanner; // For user input
 
 public class MatrixDisplayOptions {
     static Scanner input = new Scanner(System.in);
+    static int selectedOption, rowsNum, columnsNum;
+    static int[][] matrix; // Create a empty matrix as a 2D array
 
     static int getUserInputInt(String text) {
         while (true) {
@@ -31,14 +33,15 @@ public class MatrixDisplayOptions {
             }
         }
     }
-    public static void main(String[] args) {
-        int rowsNum, columnsNum;
-        while (true) { 
-            int selectedOption = getUserInputInt("Enter choic (1-5): ");
-            switch ()
-            // Get the number of rows and columns
-            rowsNum = getUserInputInt("Enter the number of rows: ");
-            columnsNum = getUserInputInt("Enter the number of columns: ");
+
+    static void makeMatrix() {
+        while (true) {
+            // Get the number of rows and columns at once if it is a diagonal matrix,
+            // otherwise get the number of rows and columns separately
+            rowsNum = (selectedOption == 5)
+                    ? getUserInputInt("Enter the number of rows and columns for diagonal matrix: ")
+                    : getUserInputInt("Enter the number of rows: ");
+            columnsNum = (selectedOption == 5) ? rowsNum : getUserInputInt("Enter the number of columns: ");
             // Check if the number of rows and columns are greater than 0
             if (rowsNum <= 0 || columnsNum <= 0) {
                 System.err.println("Both rows and columns must be greater than 0. Please try again.");
@@ -46,13 +49,65 @@ public class MatrixDisplayOptions {
                 break;
             }
         }
+        matrix = new int[rowsNum][columnsNum]; // Create a matrix as a 2D array
+    }
 
-        int[][] matrix = new int[rowsNum][columnsNum]; // Create a matrix as a 2D array
+    public static void main(String[] args) {
+        // Print available options
+        System.out.println("Select matrix initialization method:");
+        System.out.println("1. User Input");
+        System.out.println("2. Random Numbers");
+        System.out.println("3. All Zeros");
+        System.out.println("4. All Ones");
+        System.out.println("5. Diagonal Matrix");
 
-        // Row-wise input iteration
-        for (int i = 0; i < rowsNum; i++) {
-            for (int j = 0; j < columnsNum; j++) {
-                matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ",0);
+        // Let the user select an option
+        while (true) {
+            selectedOption = getUserInputInt("Enter choice (1-5): ");
+            if (selectedOption >= 1 && selectedOption <= 5) {
+                makeMatrix();
+                switch (selectedOption) {
+                    case 1 -> { // User Input
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = getUserInputInt("Enter element [" + i + "][" + j + "]: ");
+                            }
+                        }
+                        return;
+                    }
+                    case 2 -> { // Random Numbers (0-9)
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = (int) (Math.random() * 10); // Random number from 0 to 9
+                            }
+                        }
+                        return;
+                    }
+                    case 3 -> { // All Zeros
+                        // Do nothing because the matrix is already empty
+                    }
+                    case 4 -> { // All Ones
+                        for (int i = 0; i < rowsNum; i++) {
+                            for (int j = 0; j < columnsNum; j++) {
+                                matrix[i][j] = 1;
+                            }
+                        }
+                        return;
+                    }
+                    case 5 -> { // Diagonal Matrix
+                        for (int i = 0; i < rowsNum; i++) {
+                            matrix[i][i] = 1; // matrix[i][i] = 1, otherwise 0
+                        }
+                        return;
+                    }
+                    default -> {
+                        System.err.println("Unknown error. Please try again.");
+                        continue;
+                    }
+                }
+                break; // Exit the loop
+            } else {
+                System.err.println("Invalid choice. Please try again.");
             }
         }
 
