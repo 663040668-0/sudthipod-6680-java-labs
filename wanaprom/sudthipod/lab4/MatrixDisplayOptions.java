@@ -56,6 +56,7 @@ public class MatrixDisplayOptions {
 
     // Display the matrix
     static void displayMatrix() {
+        System.out.println("Displaying the matrix:");
         for (int i = 0; i < rowsNum; i++) {
             for (int j = 0; j < columnsNum; j++) {
                 System.out.print(matrix[i][j] + " "); // Print each element inline

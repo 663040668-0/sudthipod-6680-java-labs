@@ -11,7 +11,7 @@ import java.util.Scanner; // For user input
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 04/12/2023
+ * Latest Update: 05/12/2023
  */
 
 public class MatrixDisplay {
@@ -53,6 +53,7 @@ public class MatrixDisplay {
         }
 
         // Display the matrix
+        System.out.println("Displaying the matrix:");
         for (int i = 0; i < rowsNum; i++) {
             for (int j = 0; j < columnsNum; j++) {
                 System.out.print(matrix[i][j] + " "); // Print each element inline
