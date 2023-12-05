@@ -165,7 +165,7 @@ public class MatrixOperations {
                                 System.out.print(iterationName + (i + 1) + ": ");
                                 int sum = 0;
                                 for (int j = 0; j < secondIterationSize; j++) {
-                                    sum += (iterationName == "Row ") ? matrix[i][j] : matrix[j][i]; // Add the element separately
+                                    sum += (iterationName.equals("Row ")) ? matrix[i][j] : matrix[j][i]; // Add the element separately
                                 }
                                 System.out.println(sum);
                             }
