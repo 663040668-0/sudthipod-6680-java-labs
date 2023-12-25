@@ -5,7 +5,7 @@ import java.util.Scanner; // For user input
 
 /**
  * The GuessNumberGameVer1:
- * This game class implements the previous version of the GuessNumberGame from lab4.
+ * This game class implements the previous version of the GuessNumberGamesV3 from lab4.
  * The game accepts an integer input within the range from 1 to 10 with a maximum of 3 tries.
  * The players need to input the exact same integer in order to win the game.
  * If the players have reached their maximum tries without winning, they lose the game.
@@ -109,10 +109,9 @@ public class GuessNumberGameVer1 {
         }
     }
 
-    // To string utility method
+    // Override toString() with information about the game
     @Override
     public String toString() {
-        return "GuessNumberGameVer1 [minNum=" + minNum + ", maxNum=" + maxNum + ", correctNum=" + correctNum
-                + ", maxTries=" + maxTries + ", numOfGames=" + numOfGames + "]";
+        return "GuessNumberGame with min number as " + minNum + ", max number as " + maxNum + ", max number of tries as " + maxTries;
     }
 }
