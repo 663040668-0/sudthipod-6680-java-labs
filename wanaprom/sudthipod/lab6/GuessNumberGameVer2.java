@@ -1,8 +1,6 @@
 package wanaprom.sudthipod.lab6;
 
 public class GuessNumberGameVer2 extends GuessNumberGameVer1{
-    // Class attributes
-
     // Constructors
     public GuessNumberGameVer2(int minNum, int maxNum, int maxTries) {
         super(minNum, maxNum, maxTries);
@@ -16,4 +14,18 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1{
         super();
     }
     
+    // Play the game method
+
+    // Override toString() with information about the game
+    @Override
+    public String toString() {
+        return "{" +
+                "gameName='" + super.gameName + "', " +
+                "numOfPlayers='" + super.numOfPlayers + "', " +
+                "minNum='" + this.minNum + "', " +
+                "maxNum='" + this.maxNum + "', " +
+                "correctNum='" + this.correctNum + "', " +
+                "maxTries='" + this.maxTries + "'" +
+                "}";
+    }
 }
