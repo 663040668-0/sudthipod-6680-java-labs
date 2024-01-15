@@ -71,6 +71,7 @@ public class RockPaperScissorGame extends Game {
     }
 
     // Override toString() with information about the game
+    @Override
     public String toString() { // @Override keyword is not also needed here
         return super.toString() +
                 " { " +

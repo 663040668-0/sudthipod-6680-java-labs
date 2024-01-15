@@ -10,6 +10,14 @@ public class TestGame3 {
         PokerGame game4 = new PokerGame(10);
         System.out.println(game4);
         // game2.setUpBoard();
+        DungeonsAndDragonsGame game3 = new DungeonsAndDragonsGame();
+        System.out.println(game3);
+        game3.playGame();
+        game3.gameRule();
+        game3.setUpBoard();
+        game3.rollDice();
+        DungeonsAndDragonsGame game5 = new DungeonsAndDragonsGame(3);
+        System.out.println(game5);
     }
 
 

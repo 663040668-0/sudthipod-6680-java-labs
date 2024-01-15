@@ -4,6 +4,7 @@ package wanaprom.sudthipod.lab6;
  * CardGame abstract class:
  * This class is an extension of the abstract Game class.
  * Specifically used for card games.
+ * This class takes an integer argument which is the number of cards per player.
  * In this case, they're DungeonsAndDragons, and Poker.
  *
  * Author: Sudthipod Wanaprom
