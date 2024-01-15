@@ -1,14 +1,9 @@
 package wanaprom.sudthipod.lab6;
 
 /**
- * RockPaperScissorGame:
- * This game class is an extension of the abstract Game class with the game name "Rock Paper Scissor Game"
- * and need 2 players.
- * The game accepts a String from each user and compares them in order to determine the winner.
- * In following order:
- * Rock > Scissor
- * Scissor > Paper
- * Paper > Rock
+ * RockPaperScissorGameVer2:
+ * This game class is an extension of the RockPaperScissorGame.
+ * The class implements the HasRule interface.
  *
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
@@ -17,41 +12,25 @@ package wanaprom.sudthipod.lab6;
  * Latest Update: 15/01/2024
  */
 
-public class RockPaperScissorGame extends Game {
-    // Class attributes
-    protected String player1Choice, player2Choice;
-
+public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements HasRule {
     // Constructors
-    public RockPaperScissorGame(String player1Choice, String player2Choice) {
-        super("Rock Paper Scissor Game", 2);
-        this.player1Choice = player1Choice;
-        this.player2Choice = player2Choice;
+    public RockPaperScissorGameVer2() {
+        super();
     }
-
-    public RockPaperScissorGame() {
-        this("rock", "rock");
+    
+    public RockPaperScissorGameVer2(String player1Choice, String player2Choice) {
+        super(player1Choice, player2Choice);
     }
-
-    // Getters and setters
-    public String getPlayer1Choice() {
-        return player1Choice;
-    }
-
-    public void setPlayer1Choice(String player1Choice) {
-        this.player1Choice = player1Choice;
-    }
-
-    public String getPlayer2Choice() {
-        return player2Choice;
-    }
-
-    public void setPlayer2Choice(String player2Choice) {
-        this.player2Choice = player2Choice;
+    
+    // Game rules
+    public void gameRule() { // @Override keyword is not needed here
+        System.out.println("Rock Paper Scissor Rules : ...");
     }
 
     // Play the game method
-    public void playGame() { // @Override keyword is not needed here
-        System.out.println("Playing " + super.gameName); // Announce the game
+    @Override
+    public void playGame() { // Why do we need to override this method?
+        System.out.println("Playing " + super.gameName + " Version 2"); // Announce the game
 
         /* Gameplay is unnecessary for now
 
@@ -72,7 +51,7 @@ public class RockPaperScissorGame extends Game {
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return "{ " +
+        return super.gameName + " Version 2 : { " +
                 "gameName='" + super.gameName + "', " +
                 "numOfPlayers='" + super.numOfPlayers +
                 "' } { " +

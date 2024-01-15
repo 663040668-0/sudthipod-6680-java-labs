@@ -80,7 +80,7 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 implements HasRule 
                 "minNum='" + this.minNum + "', " +
                 "maxNum='" + this.maxNum + "', " +
                 "correctNum='" + this.correctNum + "', " +
-                "maxTries='" + this.maxTries + "'" +
-                " }";
+                "maxTries='" + this.maxTries +
+                "' }";
     }
 }

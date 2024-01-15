@@ -56,7 +56,7 @@ public class MonopolyGame extends Game {
                 "gameName='" + super.gameName + "', " +
                 "numOfPlayers='" + super.numOfPlayers +
                 "' } { " +
-                "game pieces='" + String.join(" ", gamePieces) + "'" +
-                " }";
+                "game pieces='" + String.join(" ", gamePieces) +
+                "' }";
     }
 }

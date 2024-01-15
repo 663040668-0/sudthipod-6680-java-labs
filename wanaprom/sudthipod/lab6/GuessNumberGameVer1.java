@@ -116,7 +116,7 @@ public class GuessNumberGameVer1 extends Game {
                 "minNum='" + this.minNum + "', " +
                 "maxNum='" + this.maxNum + "', " +
                 "correctNum='" + this.correctNum + "', " +
-                "maxTries='" + this.maxTries + "'" +
-                " }";
+                "maxTries='" + this.maxTries +
+                "' }";
     }
 }
