@@ -73,14 +73,6 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 implements HasRule 
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return super.gameName + " Version 2 : { " +
-                "gameName='" + super.gameName + "', " +
-                "numOfPlayers='" + super.numOfPlayers +
-                "' } { " +
-                "minNum='" + this.minNum + "', " +
-                "maxNum='" + this.maxNum + "', " +
-                "correctNum='" + this.correctNum + "', " +
-                "maxTries='" + this.maxTries +
-                "' }";
+        return super.gameName + " Version 2 : " + super.toString();
     }
 }

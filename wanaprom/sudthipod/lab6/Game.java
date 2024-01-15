@@ -52,5 +52,10 @@ public abstract class Game {
 
     // Override methods
     @Override
-    public abstract String toString(); // Abstract tells the subclass to implement the method
+    public String toString() {
+        return "{ " +
+                "gameName='" + gameName + "', " +
+                "numOfPlayers='" + numOfPlayers +
+                "' }";
+    }
 }

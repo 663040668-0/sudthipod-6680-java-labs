@@ -109,10 +109,8 @@ public class GuessNumberGameVer1 extends Game {
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return "{ " +
-                "gameName='" + super.gameName + "', " +
-                "numOfPlayers='" + super.numOfPlayers +
-                "' } { " +
+        return super.toString() +
+                " { " +
                 "minNum='" + this.minNum + "', " +
                 "maxNum='" + this.maxNum + "', " +
                 "correctNum='" + this.correctNum + "', " +

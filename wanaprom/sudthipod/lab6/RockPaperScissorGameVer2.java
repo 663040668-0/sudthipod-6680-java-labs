@@ -51,12 +51,6 @@ public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements Ha
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return super.gameName + " Version 2 : { " +
-                "gameName='" + super.gameName + "', " +
-                "numOfPlayers='" + super.numOfPlayers +
-                "' } { " +
-                "player1Choice='" + this.player1Choice + "', " +
-                "player2Choice='" + this.player2Choice +
-                "' }";
+        return super.gameName + " Version 2 : " + super.toString();
     }
 }
