@@ -32,6 +32,7 @@ public class PokerGame extends CardGame implements HasRule {
     }
     
     // Play the game method
+    @Override
     public void playGame() {
         System.out.println("Playing " + super.gameName); // Announce the game
     }

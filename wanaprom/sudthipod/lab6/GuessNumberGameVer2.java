@@ -27,7 +27,8 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 implements HasRule 
     }
 
     // Game rules
-    public void gameRule() { // @Override keyword is not needed here
+    @Override
+    public void gameRule() {
         System.out.println("Guess Number Game Rules : ...");
     }
     

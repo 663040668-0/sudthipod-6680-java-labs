@@ -42,6 +42,7 @@ public class DungeonsAndDragonsGame extends CardGame implements HasRule, UseBoar
     }
     
     // Play the game method
+    @Override
     public void playGame() {
         System.out.println("Playing " + super.gameName); // Announce the game
     }

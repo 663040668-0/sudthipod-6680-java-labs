@@ -50,7 +50,8 @@ public class RockPaperScissorGame extends Game {
     }
 
     // Play the game method
-    public void playGame() { // @Override keyword is not needed here
+    @Override
+    public void playGame() {
         System.out.println("Playing " + super.gameName); // Announce the game
 
         /* Gameplay is unnecessary for now

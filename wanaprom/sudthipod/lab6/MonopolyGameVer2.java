@@ -23,16 +23,19 @@ public class MonopolyGameVer2 extends MonopolyGame implements HasRule, UseBoard,
     }
 
     // Game rules
-    public void gameRule() { // @Override keyword is not needed here
+    @Override
+    public void gameRule() {
         System.out.println("Monopoly Rules : ...");
     }
     
     // Set up the board
+    @Override
     public void setUpBoard() {
         System.out.println("Set up monopoly board");
     }
 
     // Roll the dice
+    @Override
     public void rollDice() {
         System.out.println("Roll 2 dices for monopoly game");
     }

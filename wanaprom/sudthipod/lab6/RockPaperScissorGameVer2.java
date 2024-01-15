@@ -23,7 +23,8 @@ public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements Ha
     }
     
     // Game rules
-    public void gameRule() { // @Override keyword is not needed here
+    @Override
+    public void gameRule() {
         System.out.println("Rock Paper Scissor Rules : ...");
     }
 
