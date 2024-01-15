@@ -9,7 +9,7 @@ package wanaprom.sudthipod.lab6;
  * Sec: 2
  */
 
-public class TestGames2 {
+public class TestGame2 {
     public static void main(String[] args) {
         /*
         GuessNumberGameVer2 game1 = new GuessNumberGameVer2();

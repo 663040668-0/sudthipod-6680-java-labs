@@ -52,10 +52,11 @@ public class MonopolyGame extends Game {
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return "{" +
+        return "{ " +
                 "gameName='" + super.gameName + "', " +
-                "numOfPlayers='" + super.numOfPlayers + "', " +
-                "gamePieces='" + String.join(" ", gamePieces) + "'" +
-                "}";
+                "numOfPlayers='" + super.numOfPlayers +
+                "' } { " +
+                "game pieces='" + String.join(" ", gamePieces) + "'" +
+                " }";
     }
 }

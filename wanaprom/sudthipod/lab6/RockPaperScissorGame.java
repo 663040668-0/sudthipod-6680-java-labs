@@ -72,11 +72,12 @@ public class RockPaperScissorGame extends Game {
 
     // Override toString() with information about the game
     public String toString() { // @Override keyword is not also needed here
-        return "{" +
+        return "{ " +
                 "gameName='" + super.gameName + "', " +
-                "numOfPlayers='" + super.numOfPlayers + "', " +
+                "numOfPlayers='" + super.numOfPlayers +
+                "' } { " +
                 "player1Choice='" + this.player1Choice + "', " +
                 "player2Choice='" + this.player2Choice +
-                "}";
+                " }";
     }
 }
