@@ -4,7 +4,7 @@ package wanaprom.sudthipod.lab6;
  * MonopolyGame:
  * This game class is an extension of the abstract Game class with the game name "Monopoly Game"
  * and need 4 players.
- * The game accepts a list of String which are shapes or objects.
+ * The game accepts a list of String which are properties in the same amount of the players.
  *
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
@@ -42,9 +42,9 @@ public class MonopolyGame extends Game {
 
         /* Gameplay is unnecessary for now
 
-        // Each player presents their pieces
+        // Each player presents their properties
         for (int i = 0; i < super.numOfPlayers; i++) {
-            System.out.println("Player" + (i + 1) + " has brought " + this.gamePieces[i]);
+            System.out.println("Player" + (i + 1) + " has " + this.gamePieces[i]);
         }
 
         */
