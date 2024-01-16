@@ -3,7 +3,7 @@ package wanaprom.sudthipod.lab6;
 /**
  * TestGame:
  * This program is for testing the first part in lab 6.
- * ***There is a problem with the RockPaperScissorGame name --> Fixed.
+ * ***Changed RockPaperScissor to RockPaperScissorGame for similarity.
  *
  * Student: Sudthipod Wanaprom
  * ID: 663040668-0
