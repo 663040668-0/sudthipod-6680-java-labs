@@ -11,7 +11,7 @@ package wanaprom.sudthipod.lab6;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 15/01/2024
+ * Latest Update: 16/01/2024
  */
 
 public class PokerGame extends CardGame implements HasRule {
@@ -28,13 +28,13 @@ public class PokerGame extends CardGame implements HasRule {
 
     // Game rule
     public void gameRule() {
-        System.out.println("Poker Game Rules : ...");
+        System.out.println(super.getGameName() + " Rules : ...");
     }
     
     // Play the game method
     @Override
     public void playGame() {
-        System.out.println("Playing " + super.gameName); // Announce the game
+        System.out.println("Playing " + super.getGameName()); // Announce the game
     }
 
     // Override toString() with information about the game

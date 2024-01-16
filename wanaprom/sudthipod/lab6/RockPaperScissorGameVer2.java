@@ -9,7 +9,7 @@ package wanaprom.sudthipod.lab6;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 15/01/2024
+ * Latest Update: 16/01/2024
  */
 
 public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements HasRule {
@@ -31,7 +31,7 @@ public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements Ha
     // Play the game method
     @Override
     public void playGame() { // Why do we need to override this method?
-        System.out.println("Playing " + super.gameName + " Version 2"); // Announce the game
+        System.out.println("Playing " + super.getGameName() + " Version 2"); // Announce the game
 
         /* Gameplay is unnecessary for now
 
@@ -53,6 +53,6 @@ public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements Ha
     // Override toString() with information about the game
     @Override
     public String toString() { // @Override keyword is not also needed here
-        return super.gameName + " Version 2 : " + super.toString();
+        return super.getGameName() + " Version 2 : " + super.toString();
     }
 }

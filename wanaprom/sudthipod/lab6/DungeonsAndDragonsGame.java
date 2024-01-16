@@ -11,7 +11,7 @@ package wanaprom.sudthipod.lab6;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 15/01/2024
+ * Latest Update: 16/01/2024
  */
 
 public class DungeonsAndDragonsGame extends CardGame implements HasRule, UseBoard, UseDice {
@@ -28,23 +28,23 @@ public class DungeonsAndDragonsGame extends CardGame implements HasRule, UseBoar
 
     // Game rule
     public void gameRule() {
-        System.out.println("Dungeons And Dragons Game Rules : ...");
+        System.out.println(super.getGameName() + " Rules : ...");
     }
 
     // Set up the board
     public void setUpBoard() {
-        System.out.println("Setting up board for Dungeons And Dragons Game");
+        System.out.println("Setting up board for " + super.getGameName());
     }
 
     // Roll the dice
     public void rollDice() {
-        System.out.println("Roll 2 dices for Dungeons And Dragons Game");
+        System.out.println("Roll 2 dices for " + super.getGameName());
     }
     
     // Play the game method
     @Override
     public void playGame() {
-        System.out.println("Playing " + super.gameName); // Announce the game
+        System.out.println("Playing " + super.getGameName()); // Announce the game
     }
 
     // Override toString() with information about the game

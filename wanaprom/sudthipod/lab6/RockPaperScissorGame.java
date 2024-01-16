@@ -14,7 +14,7 @@ package wanaprom.sudthipod.lab6;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 15/01/2024
+ * Latest Update: 16/01/2024
  */
 
 public class RockPaperScissorGame extends Game {
@@ -52,7 +52,7 @@ public class RockPaperScissorGame extends Game {
     // Play the game method
     @Override
     public void playGame() {
-        System.out.println("Playing " + super.gameName); // Announce the game
+        System.out.println("Playing " + super.getGameName()); // Announce the game
 
         /* Gameplay is unnecessary for now
 
