@@ -1,7 +1,7 @@
 package wanaprom.sudthipod.lab6;
 
 /**
- * TestGames2:
+ * TestGame2:
  * This program is for testing the second part in lab 6.
  * **Also added the word game to RockPaperScissor.
  *
