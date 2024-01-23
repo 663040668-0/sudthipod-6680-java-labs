@@ -19,6 +19,11 @@ import javax.swing.*;
  */
 
 public class MySimpleWindow extends JFrame {
+    // Components Clarification
+    protected JButton resetButton;
+    protected JButton submitButton;
+    protected JPanel buttonsPanel;
+
     // Main methods
     public static void createAndShowGUI() {
         MySimpleWindow msw = new MySimpleWindow("My Simple Window");
@@ -46,21 +51,18 @@ public class MySimpleWindow extends JFrame {
     // Object methods
     protected void addComponents() {
         // Create buttons
-        JButton resetButton = new JButton("Reset");
-        JButton submitButton = new JButton("Submit");
+        resetButton = new JButton("Reset");
+        submitButton = new JButton("Submit");
 
         // Create buttons panel
-        JPanel buttonsPanel = new JPanel();
+        buttonsPanel = new JPanel();
 
-        // Add buttons
+        // Add buttons to buttons panel
         buttonsPanel.add(resetButton);
         buttonsPanel.add(submitButton);
 
-        // Add buttons panel
+        // Add buttons panel to window
         add(buttonsPanel);
-
-        // Note: All the components are created within this method due to this class will later be extended.
-        //       Therefore, keep it as clean as possible.
     }
 
     protected void setFrameFeatures() {
