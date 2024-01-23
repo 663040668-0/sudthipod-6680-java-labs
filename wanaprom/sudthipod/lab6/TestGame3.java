@@ -1,5 +1,14 @@
 package wanaprom.sudthipod.lab6;
 
+/**
+ * TestGame3:
+ * This program is for testing the third part in lab 6.
+ *
+ * Student: Sudthipod Wanaprom
+ * ID: 663040668-0
+ * Sec: 2
+ */
+
 public class TestGame3 {
     public static void main(String[] args) {
         //CardGame game1 = new CardGame(); Will throw error
