@@ -15,14 +15,17 @@ import javax.swing.*;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 23/01/2024
+ * Latest Update: 24/01/2024
  */
 
 public class MySimpleWindow extends JFrame {
     // Components Clarification
+    protected JPanel mainPanel; // Use box layout in y-axis
+    // Use mainPanel for later design
+
+    protected JPanel buttonsPanel; // Use flow layout
     protected JButton resetButton;
     protected JButton submitButton;
-    protected JPanel buttonsPanel;
 
     // Main methods
     public static void createAndShowGUI() {
@@ -49,7 +52,14 @@ public class MySimpleWindow extends JFrame {
     }
 
     // Object methods
-    protected void addComponents() {
+    protected void addMainPanel() {
+        // Create main panel
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        add(mainPanel);
+    }
+
+    protected void addButtons() {
         // Create buttons
         resetButton = new JButton("Reset");
         submitButton = new JButton("Submit");
@@ -62,7 +72,12 @@ public class MySimpleWindow extends JFrame {
         buttonsPanel.add(submitButton);
 
         // Add buttons panel to window
-        add(buttonsPanel);
+        mainPanel.add(buttonsPanel);
+    }
+
+    protected void addComponents() {
+        addMainPanel();
+        addButtons();
     }
 
     protected void setFrameFeatures() {
