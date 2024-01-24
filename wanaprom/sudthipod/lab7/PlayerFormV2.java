@@ -1,7 +1,6 @@
 package wanaprom.sudthipod.lab7;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * PlayerFormV2:
