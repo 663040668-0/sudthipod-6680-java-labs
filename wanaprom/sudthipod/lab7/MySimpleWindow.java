@@ -1,6 +1,7 @@
 package wanaprom.sudthipod.lab7;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * MySimpleWindow:
@@ -20,8 +21,7 @@ import javax.swing.*;
 
 public class MySimpleWindow extends JFrame {
     // Components Clarification
-    protected JPanel mainPanel; // Use box layout in y-axis
-    // Use mainPanel for later design
+    protected JPanel mainPanel; // Use border layout
 
     protected JPanel buttonsPanel; // Use flow layout
     protected JButton resetButton;
@@ -52,14 +52,11 @@ public class MySimpleWindow extends JFrame {
     }
 
     // Object methods
-    protected void addMainPanel() {
+    protected void addComponents() {
         // Create main panel
-        mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel = new JPanel(new BorderLayout());
         add(mainPanel);
-    }
 
-    protected void addButtons() {
         // Create buttons
         resetButton = new JButton("Reset");
         submitButton = new JButton("Submit");
@@ -71,13 +68,8 @@ public class MySimpleWindow extends JFrame {
         buttonsPanel.add(resetButton);
         buttonsPanel.add(submitButton);
 
-        // Add buttons panel to window
-        mainPanel.add(buttonsPanel);
-    }
-
-    protected void addComponents() {
-        addMainPanel();
-        addButtons();
+        // Add buttons panel to main panel
+        mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
     }
 
     protected void setFrameFeatures() {

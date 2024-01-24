@@ -46,7 +46,7 @@ public class RadioForm extends EmptyForm {
             }
         }
 
-        // Add the form label and form field to the form panel
+        // Add to the form panel
         add(radioButtonPanel);
     }
 
@@ -56,5 +56,5 @@ public class RadioForm extends EmptyForm {
         this(formName, formLabel, radioButtonPanel, buttonGroup, radioButtons, radioButtonNames, 0);
     }
 
-    // Does not allow 0 arguments constructor
+    // Does not allow the single argument constructor
 }

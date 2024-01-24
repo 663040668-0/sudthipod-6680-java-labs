@@ -21,6 +21,7 @@ import java.awt.*;
 public class EmptyForm extends JPanel {
     // Constructors
     public EmptyForm(String formName, JLabel formLabel) {
+        super();
         // Set layout
         setLayout(new GridLayout(1, 2));
         // Use grid layout for equal spacing between components

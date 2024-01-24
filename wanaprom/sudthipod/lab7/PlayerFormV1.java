@@ -1,6 +1,7 @@
 package wanaprom.sudthipod.lab7;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * PlayerFormV1:
@@ -24,6 +25,8 @@ import javax.swing.*;
 
 public class PlayerFormV1 extends MySimpleWindow {
     // Components Clarification
+    protected JPanel formsPanel; // Use box layout in y-axis
+
     protected JPanel namePanel; // Use grid layout 1 row 2 columns
     protected JLabel nameLabel;
     protected JTextField nameField;
@@ -35,8 +38,6 @@ public class PlayerFormV1 extends MySimpleWindow {
     protected JPanel birthDatePanel; // Use grid layout 1 row 2 columns
     protected JLabel birthDateLabel;
     protected JTextField birthDateField;
-
-    protected final int FIELD_LENGTH = 15;
 
     protected JPanel genderPanel; // Use grid layout 1 row 2 columns
     protected JLabel genderLabel;
@@ -70,30 +71,29 @@ public class PlayerFormV1 extends MySimpleWindow {
     }
 
     // Object methods
-    protected void addDefaultForms() {
+    @Override
+    protected void addComponents() {
+        // Inherit components
+        super.addComponents();
+
+        // Create forms panel
+        formsPanel = new JPanel();
+        formsPanel.setLayout(new BoxLayout(formsPanel, BoxLayout.Y_AXIS));
+
+        // Add empty form panel to main panel
+        mainPanel.add(formsPanel, BorderLayout.CENTER);
+
         // Create forms respectively
-        namePanel = new TextForm("Name:", nameLabel, nameField);
-        nationalityPanel = new TextForm("Nationality:", nationalityLabel, nationalityField);
-        birthDatePanel = new TextForm("Date of Birth (eg.,31-01-2005):", birthDateLabel, birthDateField);
+        namePanel = new TextForm("Name:", nameLabel, nameField,2); // Use default form field length
+        nationalityPanel = new TextForm("Nationality:", nationalityLabel, nationalityField); // Use default form field length
+        birthDatePanel = new TextForm("Date of Birth (eg.,31-01-2005):", birthDateLabel, birthDateField); // Use default form field length
         genderPanel = new RadioForm("Gender:", genderLabel, genderButtonPanel, genderButtonGroup,
          new JRadioButton[]{maleButton, femaleButton}, new String[]{"Male", "Female"}, 1);
         // Note: femaleButton has to be selected by default
 
-        mainPanel.add(namePanel);
-        mainPanel.add(nationalityPanel);
-        mainPanel.add(birthDatePanel);
-        mainPanel.add(genderPanel);
-    }
-
-    @Override
-    protected void addComponents() {
-        // Start with main panel
-        addMainPanel();
-
-        // Add default forms
-        addDefaultForms();
-
-        // End with buttons
-        addButtons();
+        formsPanel.add(namePanel);
+        formsPanel.add(nationalityPanel);
+        formsPanel.add(birthDatePanel);
+        formsPanel.add(genderPanel);
     }
 }
