@@ -15,9 +15,9 @@ import java.awt.*;
 public class TextForm extends Form implements HasTextField {
     protected JTextField formTextField;
 
-    public TextForm() {
+    public TextForm(String labelText) {
         // Create form
-        super();
+        super(labelText);
 
         // Create text field
         formTextField = new JTextField(DEFAULT_TEXT_FIELD_COLUMNS);
@@ -25,6 +25,11 @@ public class TextForm extends Form implements HasTextField {
 
         // Set default style
         setStyle(0);
+    }
+
+    public TextForm() {
+        // Create form
+        this(DEFAULT_LABEL_TEXT);
     }
 
     // Implement methods

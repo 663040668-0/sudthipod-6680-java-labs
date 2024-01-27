@@ -84,13 +84,17 @@ interface HasCheckBox {
 public class Form extends JPanel implements HasLabel {
     protected JLabel formLabel;
 
-    public Form() {
+    public Form(String labelText) {
         // Create empty panel with 2 columns
         setLayout(new GridLayout(1, 2));
 
         // Create label
-        formLabel = new JLabel(DEFAULT_LABEL_TEXT);
+        formLabel = new JLabel(labelText);
         add(formLabel);
+    }
+
+    public Form() {
+        this(DEFAULT_LABEL_TEXT);
     }
 
     // Implement methods

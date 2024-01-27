@@ -20,8 +20,11 @@ public class RadioForm extends Form implements HasRadioButton {
     protected Map<String, JRadioButton> radioButtonsMap; // <Key, Button>
     protected boolean isMultipleSelectionsEnabled;
 
-    public RadioForm() {
-        super();
+    // Without array of radio button names
+    public RadioForm(String labelText) {
+        // Create form
+        super(labelText);
+
         // Create radio buttons panel
         radioButtonsPanel = new JPanel(); // Use default FlowLayout
         add(radioButtonsPanel);
@@ -39,8 +42,13 @@ public class RadioForm extends Form implements HasRadioButton {
         setStyle(0);
     }
 
-    public RadioForm(String[] radioNames) {
-        this();
+    public RadioForm() {
+        this(DEFAULT_LABEL_TEXT);
+    }
+
+    // With array of radio button names
+    public RadioForm(String labelText, String[] radioNames) {
+        this(labelText);
         for (String radioName : radioNames) {
             JRadioButton radioButton = getRadioButton(radioName);
             radioButtonsMap.put(radioName, radioButton);
@@ -49,6 +57,10 @@ public class RadioForm extends Form implements HasRadioButton {
                 radioButtonsGroup.add(radioButton);
             }
         }
+    }
+
+    public RadioForm(String[] radioNames) {
+        this(DEFAULT_LABEL_TEXT, radioNames);
     }
 
     // Implement methods

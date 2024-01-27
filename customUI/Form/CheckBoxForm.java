@@ -20,8 +20,9 @@ public class CheckBoxForm extends Form implements HasCheckBox {
     protected Map<String, JCheckBox> checkBoxesMap; // <Key, CheckBox>
     protected boolean isMultipleSelectionsEnabled;
 
-    public CheckBoxForm() {
-        super();
+    // Without array of radio button names 
+    public CheckBoxForm(String labelText) {
+        super(labelText);
         // Create checkBox panel
         checkBoxesPanel = new JPanel(); // Use default FlowLayout
         add(checkBoxesPanel);
@@ -39,8 +40,13 @@ public class CheckBoxForm extends Form implements HasCheckBox {
         setStyle(0);
     }
 
-    public CheckBoxForm(String[] checkBoxNames) {
-        this();
+    public CheckBoxForm() {
+        this(DEFAULT_LABEL_TEXT);
+    }
+
+    // With array of radio button names
+    public CheckBoxForm(String labelText, String[] checkBoxNames) {
+        this(labelText);
         for (String checkBoxName : checkBoxNames) {
             JCheckBox checkBox = getCheckBox(checkBoxName);
             checkBoxesMap.put(checkBoxName, checkBox);
@@ -49,6 +55,10 @@ public class CheckBoxForm extends Form implements HasCheckBox {
                 checkBoxButtonGroup.add(checkBox);
             }
         }
+    }
+
+    public CheckBoxForm(String[] checkBoxNames) {
+        this(DEFAULT_LABEL_TEXT, checkBoxNames);
     }
 
     // Implement methods
