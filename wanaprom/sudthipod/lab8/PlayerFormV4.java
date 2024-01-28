@@ -57,7 +57,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
         // Inherit components
         super.addComponents();
 
-        formsPanel.remove(notePanel); // Realign the note panel to the bottom
+        formsPanel.remove(noteForm); // Realign the note form to the bottom
 
         // Using "MY" custom form
         hobbiesForm = new CheckBoxForm("Hobbies:", hobbies);
@@ -69,6 +69,6 @@ public class PlayerFormV4 extends PlayerFormV3 {
         formsPanel.add(hobbiesForm);
 
 
-        formsPanel.add(notePanel); // Add the note panel to the bottom
+        formsPanel.add(noteForm); // Add the note form to the bottom
     }
 }

@@ -20,9 +20,9 @@ import java.util.Map;
 interface HasLabel {
     static final String DEFAULT_LABEL_TEXT = "Unknown Form:";
 
-    JLabel getFormLabel(String labelText);
+    JLabel getLabel(String labelText);
 
-    JLabel getFormLabel();
+    JLabel getLabel();
 }
 
 interface HasTextField {
@@ -128,13 +128,13 @@ public class Form extends JPanel implements HasLabel {
     }
 
     // Implement methods
-    public JLabel getFormLabel(String labelText) {
+    public JLabel getLabel(String labelText) {
         // Both setter and getter
         formLabel.setText(labelText);
         return formLabel;
     }
 
-    public JLabel getFormLabel() {
+    public JLabel getLabel() {
         return formLabel;
     }
 
