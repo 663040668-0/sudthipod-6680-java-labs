@@ -1,8 +1,6 @@
 package customUI.Form;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.Arrays;
 
 /**
  * ComboBoxForm.java:
@@ -10,7 +8,7 @@ import java.util.Arrays;
  * simply a form with comboBoxes.
  * 
  * Author: Fire Of Ender (Sudthipod Wanaprom)
- * Last update: 27/01/2024
+ * Last update: 28/01/2024
  */
 
 public class ComboBoxForm extends Form implements HasComboBox {

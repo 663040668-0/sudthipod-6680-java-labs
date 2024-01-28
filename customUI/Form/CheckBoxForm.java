@@ -11,7 +11,7 @@ import java.util.Map;
  * simply a form with checkBoxes which has no ButtonGroup by default.
  * 
  * Author: Fire Of Ender (Sudthipod Wanaprom)
- * Last update: 27/01/2024
+ * Last update: 28/01/2024
  */
 
 public class CheckBoxForm extends Form implements HasCheckBox {
