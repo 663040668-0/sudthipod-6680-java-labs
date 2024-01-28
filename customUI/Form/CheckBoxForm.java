@@ -57,6 +57,16 @@ public class CheckBoxForm extends Form implements HasCheckBox {
                 checkBoxButtonGroup.add(checkBox);
             }
         }
+
+        // Check if there are more than 3 checkBoxes
+        if (checkBoxNames.length > 3) {
+            // Change to vertical alignment
+            setLayout(new BorderLayout());
+            remove(formLabel);
+            remove(checkBoxesPanel);
+            add(formLabel, BorderLayout.NORTH);
+            add(checkBoxesPanel, BorderLayout.CENTER);
+        }
     }
 
     public CheckBoxForm(String[] checkBoxNames) {

@@ -22,10 +22,10 @@ import customUI.Form.*; // Absolute handmade package
 
 public class PlayerFormV2 extends PlayerFormV1 {
     // Components Clarification
-    protected JPanel typePanel;
-    protected JLabel typeLabel;
-    protected JComboBox<String> typeComboBox;
-    protected String[] typeItems = {"Beginner", "Amateur", "Professional"};
+    protected ComboBoxForm playerTypeForm;
+    protected JLabel playerTypeLabel;
+    protected JComboBox<String> playerTypeComboBox;
+    protected String[] playerTypeItems = {"Beginner", "Amateur", "Professional"};
 
     protected TextAreaForm noteForm;
     protected JLabel noteLabel;
@@ -65,14 +65,17 @@ public class PlayerFormV2 extends PlayerFormV1 {
         super.addComponents();
 
         // Create forms respectively
-        typePanel = new ComboBoxForm("Player Type:", typeLabel, typeComboBox, typeItems, 1);
+        playerTypeForm = new ComboBoxForm("Player Type:", playerTypeItems);
+        playerTypeComboBox = playerTypeForm.getComboBox();
+        playerTypeLabel = playerTypeForm.getLabel();
+        playerTypeComboBox.setSelectedIndex(1);
         // Note: "Amateur" has to be selected by default
 
         noteForm = new TextAreaForm("Note:", NOTE_ROWS, NOTE_COLUMNS);
         noteArea = noteForm.getTextArea();
         noteArea.setText("Thailand will face Oman at the Abdullah bin Khalifa Stadium in Doha, Qatar, on Sunday in their second match of the 2023 AFC Asian Cup, Group F.");
 
-        formsPanel.add(typePanel);
+        formsPanel.add(playerTypeForm);
         formsPanel.add(noteForm);
     }
 }

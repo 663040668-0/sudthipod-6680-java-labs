@@ -1,8 +1,10 @@
 package wanaprom.sudthipod.lab8;
 
-import java.awt.GridLayout;
+import java.util.Arrays;
 
 import javax.swing.*;
+import javax.swing.event.*;
+
 import customUI.Form.*;
 
 /**
@@ -51,6 +53,17 @@ public class PlayerFormV4 extends PlayerFormV3 {
     CheckBoxForm hobbiesForm;
     String[] hobbies = {"Reading", "Browsing", "Sleeping", "Traveling"};
 
+    ListForm sportForm;
+    String[] sports = {"Badminton", "Boxing", "Football", "Running"};
+
+    SliderForm experienceYearForm;
+    int minExperienceYear = 0;
+    int maxExperienceYear = 20;
+    int initExperienceYear = 0;
+    int majorStepExperienceYear = 5;
+    int minorStepExperienceYear = 1;
+    boolean showTickExperienceYear = true;
+
     // Object methods
     @Override
     protected void addComponents() {
@@ -62,13 +75,49 @@ public class PlayerFormV4 extends PlayerFormV3 {
         // Using "MY" custom form
         hobbiesForm = new CheckBoxForm("Hobbies:", hobbies);
         hobbiesForm.getCheckBox("Sleeping").setSelected(true); // Select "Sleeping" by default
-
-        // Adjust form layout
-        hobbiesForm.setLayout(new GridLayout(2, 1));
-
         formsPanel.add(hobbiesForm);
 
+        Arrays.sort(sports); // Sort the sports before adding
+        sportForm = new ListForm("Sports:", sports);
+        sportForm.getList().setSelectedIndex(2); // Select "Football" by default
+        formsPanel.add(sportForm);
+
+        experienceYearForm = new SliderForm("Experience Year:", minExperienceYear, maxExperienceYear, initExperienceYear, majorStepExperienceYear, minorStepExperienceYear, showTickExperienceYear);
+        formsPanel.add(experienceYearForm);
 
         formsPanel.add(noteForm); // Add the note form to the bottom
+
+        // Just try event listener
+        submitButton.addActionListener(event -> {
+            int value = experienceYearForm.getSlider().getValue();
+            char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+            String playerPronoun = maleButton.isSelected() ? "Mr." : "Ms.";
+            String playerNoun = maleButton.isSelected() ? "He" : "She";
+            String playerName = nameField.getText();
+            String playerSport = sportForm.getList().getSelectedValue();
+            String playerType = playerTypeComboBox.getSelectedItem().toString();
+            String playerNationality = nationalityField.getText();
+            String playerAge = "";
+            if (birthDateField.getText().split("-").length == 3) {
+                // Assume it's 2024 now
+                final int CURRENT_YEAR = 2024;
+                int birthYear = Integer.parseInt(birthDateField.getText().split("-")[2]);
+                playerAge = String.valueOf(CURRENT_YEAR - birthYear);
+            } else {
+                playerAge = "NaN";
+                System.err.println("Warning: Invalid date format. Please use DD-MM-YYYY format");
+            }
+            String[] playerHobbies = {};
+            for (String hobby : hobbies) {
+                if (hobbiesForm.getCheckBoxes().get(hobby).isSelected()) {
+                    playerHobbies = Arrays.copyOf(playerHobbies, playerHobbies.length + 1);
+                    playerHobbies[playerHobbies.length - 1] = hobby;
+                }
+            }
+            System.out.println(playerPronoun + playerName + " has been playing '" + playerSport + "' for " + value + " year" + (value > 1 ? "s" : ""));
+            System.out.println("and is now a" + (Arrays.binarySearch(vowels, playerType.toLowerCase().charAt(0)) >= 0 ? "n " : " ") + playerType + " player.");
+            System.out.println("\t" + playerNoun + " is a " + playerAge + " years old " + playerNationality + ".");
+            System.out.println("\t" + playerNoun + " loves to " + String.join(", ", playerHobbies) + ".");
+        });
     }
 }

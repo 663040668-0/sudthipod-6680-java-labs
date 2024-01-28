@@ -1,5 +1,6 @@
 package wanaprom.sudthipod.lab7;
 
+import customUI.Form.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -27,24 +28,27 @@ public class PlayerFormV1 extends MySimpleWindow {
     // Components Clarification
     protected JPanel formsPanel; // Use box layout in y-axis
 
-    protected JPanel namePanel; // Use grid layout 1 row 2 columns
+    protected static final int TEXTFIELD_LENGTH = 20;
+
+    protected TextFieldForm nameForm; // Use grid layout 1 row 2 columns
     protected JLabel nameLabel;
     protected JTextField nameField;
 
-    protected JPanel nationalityPanel; // Use grid layout 1 row 2 columns
+    protected TextFieldForm nationalityForm; // Use grid layout 1 row 2 columns
     protected JLabel nationalityLabel;
     protected JTextField nationalityField;
 
-    protected JPanel birthDatePanel; // Use grid layout 1 row 2 columns
+    protected TextFieldForm birthDateForm; // Use grid layout 1 row 2 columns
     protected JLabel birthDateLabel;
     protected JTextField birthDateField;
 
-    protected JPanel genderPanel; // Use grid layout 1 row 2 columns
+    protected RadioForm genderForm; // Use grid layout 1 row 2 columns
     protected JLabel genderLabel;
     protected JPanel genderButtonPanel; // Use grid layout 1 row 2 columns
     protected ButtonGroup genderButtonGroup;
     protected JRadioButton maleButton;
     protected JRadioButton femaleButton;
+    protected String[] genders = {"Male", "Female"};
 
     // Main methods (redefine)
     public static void createAndShowGUI() {
@@ -84,16 +88,31 @@ public class PlayerFormV1 extends MySimpleWindow {
         mainPanel.add(formsPanel, BorderLayout.CENTER);
 
         // Create forms respectively
-        namePanel = new TextForm("Name:", nameLabel, nameField,2); // Use default form field length
-        nationalityPanel = new TextForm("Nationality:", nationalityLabel, nationalityField); // Use default form field length
-        birthDatePanel = new TextForm("Date of Birth (eg.,31-01-2005):", birthDateLabel, birthDateField); // Use default form field length
-        genderPanel = new RadioForm("Gender:", genderLabel, genderButtonPanel, genderButtonGroup,
-         new JRadioButton[]{maleButton, femaleButton}, new String[]{"Male", "Female"}, 1);
+        nameForm = new TextFieldForm("Name:", TEXTFIELD_LENGTH);
+        nameLabel = nameForm.getLabel();
+        nameField = nameForm.getTextField();
+
+        nationalityForm = new TextFieldForm("Nationality:", TEXTFIELD_LENGTH);
+        nationalityLabel = nationalityForm.getLabel();
+        nationalityField = nationalityForm.getTextField();
+
+        birthDateForm = new TextFieldForm("Date of Birth (eg.,31-01-2005):", TEXTFIELD_LENGTH);
+        birthDateLabel = birthDateForm.getLabel();
+        birthDateField = birthDateForm.getTextField();
+
+        genderForm = new RadioForm("Gender:", genders);
+        genderLabel = genderForm.getLabel();
+        genderButtonPanel = genderForm.getRadioButtonsPanel();
+        genderButtonGroup = genderForm.getButtonGroup();
+        maleButton = genderForm.getRadioButton("Male");
+        femaleButton = genderForm.getRadioButton("Female");
+        femaleButton.setSelected(true);
+
         // Note: femaleButton has to be selected by default
 
-        formsPanel.add(namePanel);
-        formsPanel.add(nationalityPanel);
-        formsPanel.add(birthDatePanel);
-        formsPanel.add(genderPanel);
+        formsPanel.add(nameForm);
+        formsPanel.add(nationalityForm);
+        formsPanel.add(birthDateForm);
+        formsPanel.add(genderForm);
     }
 }

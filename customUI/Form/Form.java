@@ -2,10 +2,9 @@ package customUI.Form;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Map;
 
 /**
- * customUI.Form:
+ * customUI.Form.java:
  * Use to facilitate creating simple forms in Swing.
  * - Form : Empty form with only label and empty column (use as base class).
  * - TextForm : Form with text field to put text String.
@@ -15,101 +14,6 @@ import java.util.Map;
  * Author: Fire Of Ender (Sudthipod Wanaprom)
  * Last update: 28/01/2024
  */
-
-// Interfaces
-interface HasLabel {
-    static final String DEFAULT_LABEL_TEXT = "Unknown Form:";
-
-    JLabel getLabel(String labelText);
-
-    JLabel getLabel();
-}
-
-interface HasTextField {
-    static final int DEFAULT_TEXT_FIELD_COLUMNS = 10;
-
-    JTextField getTextField(int columns);
-
-    JTextField getTextField();
-}
-
-interface HasTextArea {
-    static final int DEFAULT_TEXT_AREA_ROWS = 10;
-
-    static final int DEFAULT_TEXT_AREA_COLUMNS = 30;
-
-    JTextArea getTextArea(int rows, int columns);
-
-    JTextArea getTextArea();
-}
-
-interface HasScrollPane {
-    JScrollPane getScrollPane();
-}
-
-interface HasRadioButton {
-    static final String DEFAULT_RADIO_NAME = "...";
-
-    JPanel getRadioButtonsPanel();
-
-    ButtonGroup getButtonGroup();
-
-    JRadioButton getRadioButton(String radioName); // Add and get button
-
-    JRadioButton getRadioButton(); // Add and get button with default name
-
-    String getRadioButtonName(JRadioButton radioButton); // Add and get button
-
-    Map<String, JRadioButton> getRadioButtons();
-
-    void setRadioButtonName(String newRadioName, String oldRadioName);
-
-    void setRadioButtonName(String newRadioName, JRadioButton radioButton);
-
-    void setMultipleSelectionsEnabled(boolean isMultipleSelections);
-
-    boolean isMultipleSelectionsEnabled();
-}
-
-interface HasCheckBox {
-    static final String DEFAULT_CHECKBOX_NAME = "...";
-
-    JPanel getCheckBoxesPanel();
-
-    ButtonGroup getButtonGroup();
-
-    JCheckBox  getCheckBox(String checkBoxName); // Add and get button
-
-    JCheckBox  getCheckBox(); // Add and get button with default name
-
-    String getCheckBoxName(JCheckBox checkBox); // Add and get button
-
-    Map<String, JCheckBox> getCheckBoxes();
-
-    void setCheckBoxName(String newCheckBoxName, String oldCheckBoxName);
-
-    void setCheckBoxName(String newCheckBoxName, JCheckBox checkBox);
-
-    void setMultipleSelectionsEnabled(boolean isMultipleSelections);
-
-    boolean isMultipleSelectionsEnabled();
-}
-
-interface HasComboBox {
-    JComboBox<String> getComboBox();
-
-    String[] getComboBoxItems();
-
-    int[] getComboBoxItemsAsIntegers();
-
-    void replaceComboBoxItem(String newItem, String oldItem);
-
-    void replaceComboBoxItemAt(String newItem, int index);
-
-    void setComboBoxItems(String[] comboBoxItems);
-
-    void setComboBoxItems(int[] comboBoxItems);
-}
 
 public class Form extends JPanel implements HasLabel {
     protected JLabel formLabel;

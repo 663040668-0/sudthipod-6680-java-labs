@@ -5,11 +5,11 @@ import java.awt.*;
 
 /**
  * TextForm.java:
- * Extend Form class and implement HasTextField.
- * simply a form with text field.
+ * Extend Form class and implement HasTextArea and HasScrollPane.
+ * simply a form with scrollable text area.
  * 
  * Author: Fire Of Ender (Sudthipod Wanaprom)
- * Last update: 27/01/2024
+ * Last update: 28/01/2024
  */
 
 public class TextAreaForm extends Form implements HasTextArea, HasScrollPane {
