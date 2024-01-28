@@ -43,6 +43,7 @@ public class Test extends MySimpleWindow {
 
     // Components
     protected JPanel formsPanel;
+
     protected TextForm usernameForm;
     protected JLabel usernameLabel;
     protected JTextField usernameField;
@@ -65,19 +66,26 @@ public class Test extends MySimpleWindow {
         formsPanel.setLayout(new BoxLayout(formsPanel, BoxLayout.Y_AXIS));
         mainPanel.add(formsPanel, BorderLayout.CENTER);
 
+        // Create form explicitly
         usernameForm = new TextForm("Username:");
         usernameLabel = usernameForm.getFormLabel();
         formsPanel.add(usernameForm);
 
+        // Create form implicitly
+        formsPanel.add(new TextForm("Display Name:"));
+
+        // Normal use of radio buttons
         authorityForm = new RadioForm("Authority:", authorityLevels);
         authorityForm.getRadioButton(authorityLevels[2]).setSelected(true);
         formsPanel.add(authorityForm);
 
+        // Try combobox with int[]
         currentGradeForm = new ComboBoxForm("Current Grade:", grades);
         currentGradeComboBox = currentGradeForm.getComboBox();
         currentGradeComboBox.setSelectedIndex(1);
         formsPanel.add(currentGradeForm);
 
+        // Create form implicitly
         favCountryForm = new ComboBoxForm("Favorite Country:", favCountryItems);
         formsPanel.add(favCountryForm);
     }
