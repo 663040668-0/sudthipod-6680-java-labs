@@ -28,9 +28,23 @@ interface HasLabel {
 interface HasTextField {
     static final int DEFAULT_TEXT_FIELD_COLUMNS = 10;
 
-    JTextField getFormTextField(int columns);
+    JTextField getTextField(int columns);
 
-    JTextField getFormTextField();
+    JTextField getTextField();
+}
+
+interface HasTextArea {
+    static final int DEFAULT_TEXT_AREA_ROWS = 10;
+
+    static final int DEFAULT_TEXT_AREA_COLUMNS = 30;
+
+    JTextArea getTextArea(int rows, int columns);
+
+    JTextArea getTextArea();
+}
+
+interface HasScrollPane {
+    JScrollPane getScrollPane();
 }
 
 interface HasRadioButton {

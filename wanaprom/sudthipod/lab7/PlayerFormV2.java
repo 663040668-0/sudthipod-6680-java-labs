@@ -1,6 +1,9 @@
 package wanaprom.sudthipod.lab7;
 
+import java.awt.TextArea;
+
 import javax.swing.*;
+import customUI.Form.*; // Absolute handmade package
 
 /**
  * PlayerFormV2:
@@ -26,7 +29,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
     protected JComboBox<String> typeComboBox;
     protected String[] typeItems = {"Beginner", "Amateur", "Professional"};
 
-    protected JPanel notePanel;
+    protected TextAreaForm noteForm;
     protected JLabel noteLabel;
     protected JTextArea noteArea;
     protected final int NOTE_ROWS = 3;
@@ -66,9 +69,12 @@ public class PlayerFormV2 extends PlayerFormV1 {
         // Create forms respectively
         typePanel = new ComboBoxForm("Player Type:", typeLabel, typeComboBox, typeItems, 1);
         // Note: "Amateur" has to be selected by default
-        notePanel = new ParagraphForm("Note:", noteLabel, noteArea, NOTE_ROWS, NOTE_COLUMNS);
+
+        noteForm = new TextAreaForm("Note:", NOTE_ROWS, NOTE_COLUMNS);
+        noteArea = noteForm.getTextArea();
+        noteArea.setText("Thailand will face Oman at the Abdullah bin Khalifa Stadium in Doha, Qatar, on Sunday in their second match of the 2023 AFC Asian Cup, Group F.");
 
         formsPanel.add(typePanel);
-        formsPanel.add(notePanel);
+        formsPanel.add(noteForm);
     }
 }

@@ -12,36 +12,46 @@ import java.awt.*;
  * Last update: 27/01/2024
  */
 
-public class TextForm extends Form implements HasTextField {
+public class TextFieldForm extends Form implements HasTextField {
     protected JTextField formTextField;
 
-    public TextForm(String labelText) {
+    public TextFieldForm(String labelText, int columns) {
         // Create form
         super(labelText);
 
         // Create text field
-        formTextField = new JTextField(DEFAULT_TEXT_FIELD_COLUMNS);
+        formTextField = new JTextField(columns);
         add(formTextField);
 
         // Set default style
         setStyle(0);
     }
 
-    public TextForm() {
+    public TextFieldForm(String labelText) {
         // Create form
-        this(DEFAULT_LABEL_TEXT);
+        this(labelText, DEFAULT_TEXT_FIELD_COLUMNS);
+    }
+
+    public TextFieldForm(int columns) {
+        // Create form
+        this(DEFAULT_LABEL_TEXT, columns);
+    }
+
+    public TextFieldForm() {
+        // Create form
+        this(DEFAULT_LABEL_TEXT, DEFAULT_TEXT_FIELD_COLUMNS);
     }
 
     // Implement methods
     @Override
-    public JTextField getFormTextField(int columns) {
+    public JTextField getTextField(int columns) {
         // Both setter and getter
         formTextField.setColumns(columns);
         return formTextField;
     }
 
     @Override
-    public JTextField getFormTextField() {
+    public JTextField getTextField() {
         return formTextField;
     }
 
@@ -68,7 +78,7 @@ public class TextForm extends Form implements HasTextField {
 
             default:
                 // Do nothing
-                System.err.println("Unknown style number: " + styleNumber + " for RadioForm.");
+                System.err.println("Unknown style number: " + styleNumber + " for TextFieldForm.");
                 break;
         }
     }
