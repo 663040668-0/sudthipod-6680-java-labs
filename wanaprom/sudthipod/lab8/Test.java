@@ -46,8 +46,16 @@ public class Test extends MySimpleWindow {
     protected TextForm usernameForm;
     protected JLabel usernameLabel;
     protected JTextField usernameField;
+
     protected RadioForm authorityForm;
     protected String[] authorityLevels = {"Teacher", "Parent", "Student"};
+
+    protected ComboBoxForm currentGradeForm;
+    protected JComboBox<String> currentGradeComboBox;
+    protected int[] grades = {4, 5, 6};
+
+    protected ComboBoxForm favCountryForm;
+    protected String[] favCountryItems = {"Thailand", "Indonesia", "Vietnam"};
 
     // Object methods
     @Override
@@ -64,5 +72,13 @@ public class Test extends MySimpleWindow {
         authorityForm = new RadioForm("Authority:", authorityLevels);
         authorityForm.getRadioButton(authorityLevels[2]).setSelected(true);
         formsPanel.add(authorityForm);
+
+        currentGradeForm = new ComboBoxForm("Current Grade:", grades);
+        currentGradeComboBox = currentGradeForm.getComboBox();
+        currentGradeComboBox.setSelectedIndex(1);
+        formsPanel.add(currentGradeForm);
+
+        favCountryForm = new ComboBoxForm("Favorite Country:", favCountryItems);
+        formsPanel.add(favCountryForm);
     }
 }

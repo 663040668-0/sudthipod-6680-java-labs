@@ -181,7 +181,7 @@ public class RadioForm extends Form implements HasRadioButton {
 
             default:
                 // Warning
-                System.err.println("Unknown style number: " + styleNumber + " for Form.");
+                System.err.println("Unknown style number: " + styleNumber + " for RadioForm.");
                 break;
         }
     }

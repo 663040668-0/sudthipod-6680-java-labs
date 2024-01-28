@@ -81,6 +81,22 @@ interface HasCheckBox {
     boolean isMultipleSelectionsEnabled();
 }
 
+interface HasComboBox {
+    JComboBox<String> getComboBox();
+
+    String[] getComboBoxItems();
+
+    int[] getComboBoxItemsAsIntegers();
+
+    void replaceComboBoxItem(String newItem, String oldItem);
+
+    void replaceComboBoxItemAt(String newItem, int index);
+
+    void setComboBoxItems(String[] comboBoxItems);
+
+    void setComboBoxItems(int[] comboBoxItems);
+}
+
 public class Form extends JPanel implements HasLabel {
     protected JLabel formLabel;
 

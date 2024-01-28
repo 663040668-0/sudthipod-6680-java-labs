@@ -22,7 +22,9 @@ public class CheckBoxForm extends Form implements HasCheckBox {
 
     // Without array of radio button names 
     public CheckBoxForm(String labelText) {
+        // Create form
         super(labelText);
+
         // Create checkBox panel
         checkBoxesPanel = new JPanel(); // Use default FlowLayout
         add(checkBoxesPanel);
@@ -118,9 +120,9 @@ public class CheckBoxForm extends Form implements HasCheckBox {
         if (checkBox != null) {
             // Remove old name
             checkBoxesMap.remove(oldCheckBoxName);
-            checkBoxesMap.put(newCheckBoxName, checkBox);
 
             // Set new name
+            checkBoxesMap.put(newCheckBoxName, checkBox);
             checkBox.setText(newCheckBoxName);
         }
     }
@@ -160,7 +162,7 @@ public class CheckBoxForm extends Form implements HasCheckBox {
                 // Reset style
                 checkBoxesPanel.setBackground(null);
                 for (JCheckBox checkBox : checkBoxesMap.values()) {
-                    checkBox.setFont(UIManager.getDefaults().getFont("Label.font"));
+                    checkBox.setFont(UIManager.getDefaults().getFont("CheckBox.font"));
                     checkBox.setForeground(null);
                     checkBox.setBackground(null);
                 }
@@ -180,7 +182,7 @@ public class CheckBoxForm extends Form implements HasCheckBox {
 
             default:
                 // Warning
-                System.err.println("Unknown style number: " + styleNumber + " for Form.");
+                System.err.println("Unknown style number: " + styleNumber + " for CheckBoxForm.");
                 break;
         }
     }

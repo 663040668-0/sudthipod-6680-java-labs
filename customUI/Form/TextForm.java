@@ -68,6 +68,7 @@ public class TextForm extends Form implements HasTextField {
 
             default:
                 // Do nothing
+                System.err.println("Unknown style number: " + styleNumber + " for RadioForm.");
                 break;
         }
     }
