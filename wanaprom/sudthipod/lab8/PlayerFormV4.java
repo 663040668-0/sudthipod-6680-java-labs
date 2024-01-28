@@ -88,6 +88,22 @@ public class PlayerFormV4 extends PlayerFormV3 {
         formsPanel.add(noteForm); // Add the note form to the bottom
 
         // Just try event listener
+        resetButton.addActionListener(event -> {
+            nameField.setText("");
+            nationalityField.setText("");
+            birthDateField.setText("");
+            genderButtonGroup.setSelected(maleButton.getModel(), false);
+            genderButtonGroup.setSelected(femaleButton.getModel(), true);
+            playerTypeComboBox.setSelectedIndex(Arrays.binarySearch(playerTypeItems, "Amateur"));
+            for (String hobby : hobbies) {
+                hobbiesForm.getCheckBoxes().get(hobby).setSelected(false);
+            }
+            hobbiesForm.getCheckBoxes().get("Sleeping").setSelected(true);
+            sportForm.getList().setSelectedIndex(Arrays.binarySearch(sports, "Football"));
+            experienceYearForm.getSlider().setValue(initExperienceYear);
+            noteArea.setText("Thailand will face Oman at the Abdullah bin Khalifa Stadium in Doha, Qatar, on Sunday in their second match of the 2023 AFC Asian Cup, Group F.");
+        });
+
         submitButton.addActionListener(event -> {
             int value = experienceYearForm.getSlider().getValue();
             char[] vowels = {'a', 'e', 'i', 'o', 'u'};
