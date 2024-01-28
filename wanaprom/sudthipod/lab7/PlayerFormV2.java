@@ -1,7 +1,5 @@
 package wanaprom.sudthipod.lab7;
 
-import java.awt.TextArea;
-
 import javax.swing.*;
 import customUI.Form.*; // Absolute handmade package
 
