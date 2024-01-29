@@ -5,13 +5,18 @@ import javax.swing.*;
 import customUI.Form.*;
 
 /**
- * PlayerFormV3:
+ * PlayerFormV4:
  * This program is extended from PlayerFormV3
- * and implements the addMenus method
+ * and add new components
  * (Static method must not be overridden but must be redefined instead)
  * 
  * Added:
- * - Menus including <File> and <Config>
+ * - Hobbies: using <CheckBox>
+ * - Sports: using <List>
+ * - Experience Year: using <Slider>
+ * 
+ * Overdelivered:
+ * - actionListener for <resetButton> and <submitButton>
  * 
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
