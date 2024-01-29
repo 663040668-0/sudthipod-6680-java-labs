@@ -6,7 +6,7 @@ import customUI.Form.*;
 
 /**
  * PlayerFormV3:
- * This program is extended from PlayerFormV2
+ * This program is extended from PlayerFormV3
  * and implements the addMenus method
  * (Static method must not be overridden but must be redefined instead)
  * 
