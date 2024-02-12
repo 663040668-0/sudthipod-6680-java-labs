@@ -90,6 +90,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
         formsPanel.add(noteForm); // Add the note form to the bottom
 
         // Just try event listener
+        /*
         resetButton.addActionListener(event -> {
             nameField.setText("");
             nationalityField.setText("");
@@ -137,5 +138,6 @@ public class PlayerFormV4 extends PlayerFormV3 {
             System.out.println("\t" + playerNoun + " is a " + playerAge + " years old " + playerNationality + ".");
             System.out.println("\t" + playerNoun + " loves to " + String.join(", ", playerHobbies) + ".");
         });
+        */
     }
 }
