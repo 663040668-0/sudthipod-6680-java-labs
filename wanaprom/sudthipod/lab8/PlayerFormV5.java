@@ -22,7 +22,7 @@ import javax.swing.*;
 public class PlayerFormV5 extends PlayerFormV4 {
     // Main methods
     public static void createAndShowGUI() {
-        PlayerFormV5 window = new PlayerFormV5("Player Form V4");
+        PlayerFormV5 window = new PlayerFormV5("Player Form V5");
         window.addMenus();
         window.addComponents();
         window.setFrameFeatures();
