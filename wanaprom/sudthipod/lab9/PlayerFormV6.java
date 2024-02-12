@@ -23,7 +23,6 @@ public class PlayerFormV6 extends PlayerFormV5 {
     // Main methods
     public static void createAndShowGUI() {
         PlayerFormV6 window = new PlayerFormV6("Player Form V6");
-        window.createActionListeners();
         window.addMenus();
         window.addComponents();
         window.setFrameFeatures();
@@ -56,6 +55,9 @@ public class PlayerFormV6 extends PlayerFormV5 {
     @Override
     protected void addComponents() {
         super.addComponents();
+
+        // Initialize ActionListener object to handle events from components
+        createActionListeners();
 
         // Set name of each TextField
         nameField.setName("Name");
