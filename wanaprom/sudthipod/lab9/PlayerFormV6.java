@@ -90,6 +90,16 @@ public class PlayerFormV6 extends PlayerFormV5 {
         });
     }
 
+    protected void showMessageDialog(String message) {
+        // Use invoke later to prevent interupting radioButtons and checkBoxes selection
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                JOptionPane.showMessageDialog(PlayerFormV6.this, message);
+            }
+        });
+    }
+
     protected void handleResetButton() {
         // Reset every form component
         nameField.setText("");
@@ -125,14 +135,14 @@ public class PlayerFormV6 extends PlayerFormV5 {
         String playerHobbies = String.join(" ", hobbiesList);
         String sport = sportForm.getList().getSelectedValuesList().toString();
 
-        // Display the message dialog (parented by PlayerForm window)
-        JOptionPane.showMessageDialog(this, String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport), "Result", JOptionPane.INFORMATION_MESSAGE);
+        // Display the message dialog
+        showMessageDialog(String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport));
     }
 
     protected void handleTextField(JTextField textField) {
         String textFieldName = textField.getName();
         String textFieldValue = textField.getText();
-        // Display the message dialog (parented by PlayerForm window)
-        JOptionPane.showMessageDialog(this, String.format(TEXTFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
+        // Display the message dialog
+        showMessageDialog(String.format(TEXTFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
     }
 }
