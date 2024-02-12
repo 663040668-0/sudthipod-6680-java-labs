@@ -48,7 +48,7 @@ public class PlayerFormV6 extends PlayerFormV5 {
 
     // Components
     protected final String SUBMIT_DIALOG_TEMPLATE = "%s has nationality as %s and was born on %s, has gender as %s, is a %s player, has hobbies as %s and plays %s";
-    protected final String TEXFIELD_DIALOG_TEMPLATE = "%s is changed to %s";
+    protected final String TEXTFIELD_DIALOG_TEMPLATE = "%s is changed to %s";
 
     protected ActionListener actionListener;
 
@@ -131,6 +131,6 @@ public class PlayerFormV6 extends PlayerFormV5 {
         String textFieldName = textField.getName();
         String textFieldValue = textField.getText();
         // Display the message dialog (parented by PlayerForm window)
-        JOptionPane.showMessageDialog(PlayerFormV6.this, String.format(TEXFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
+        JOptionPane.showMessageDialog(PlayerFormV6.this, String.format(TEXTFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
     }
 }
