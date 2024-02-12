@@ -126,13 +126,13 @@ public class PlayerFormV6 extends PlayerFormV5 {
         String sport = sportForm.getList().getSelectedValuesList().toString();
 
         // Display the message dialog (parented by PlayerForm window)
-        JOptionPane.showMessageDialog(PlayerFormV6.this, String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport), "Result", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport), "Result", JOptionPane.INFORMATION_MESSAGE);
     }
 
     protected void handleTextField(JTextField textField) {
         String textFieldName = textField.getName();
         String textFieldValue = textField.getText();
         // Display the message dialog (parented by PlayerForm window)
-        JOptionPane.showMessageDialog(PlayerFormV6.this, String.format(TEXTFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
+        JOptionPane.showMessageDialog(this, String.format(TEXTFIELD_DIALOG_TEMPLATE, textFieldName, textFieldValue));
     }
 }
