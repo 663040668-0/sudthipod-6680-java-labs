@@ -52,19 +52,19 @@ public class PlayerFormV4 extends PlayerFormV3 {
     }
 
     // Components
-    CheckBoxForm hobbiesForm;
-    String[] hobbies = {"Reading", "Browsing", "Sleeping", "Traveling"};
+    protected CheckBoxForm hobbiesForm;
+    protected String[] hobbies = {"Reading", "Browsing", "Sleeping", "Traveling"};
 
-    ListForm sportForm;
-    String[] sports = {"Badminton", "Boxing", "Football", "Running"};
+    protected ListForm sportForm;
+    protected String[] sports = {"Badminton", "Boxing", "Football", "Running"};
 
-    SliderForm experienceYearForm;
-    int minExperienceYear = 0;
-    int maxExperienceYear = 20;
-    int initExperienceYear = 0;
-    int majorStepExperienceYear = 5;
-    int minorStepExperienceYear = 1;
-    boolean showTickExperienceYear = true;
+    protected SliderForm experienceYearForm;
+    protected int minExperienceYear = 0;
+    protected int maxExperienceYear = 20;
+    protected int initExperienceYear = 0;
+    protected int majorStepExperienceYear = 5;
+    protected int minorStepExperienceYear = 1;
+    protected boolean showTickExperienceYear = true;
 
     // Object methods
     @Override

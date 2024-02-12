@@ -47,16 +47,16 @@ public class PlayerFormV3 extends PlayerFormV2 {
     }
 
     // Components
-    JMenuBar menuBar;
+    protected JMenuBar menuBar;
 
-    JMenu fileMenu;
-    JMenuItem newMenuItem, openMenuItem, saveMenuItem, exitMenuItem;
+    protected JMenu fileMenu;
+    protected JMenuItem newMenuItem, openMenuItem, saveMenuItem, exitMenuItem;
 
-    JMenu configMenu;
-    JMenu colorSubMenu;
-    JMenuItem redMenuItem, greenMenuItem, blueMenuItem;
-    JMenu sizeSubMenu;
-    JMenuItem size16MenuItem, size20MenuItem, size24MenuItem;
+    protected JMenu configMenu;
+    protected JMenu colorSubMenu;
+    protected JMenuItem redMenuItem, greenMenuItem, blueMenuItem;
+    protected JMenu sizeSubMenu;
+    protected JMenuItem size16MenuItem, size20MenuItem, size24MenuItem;
 
     // Object methods
     protected void addMenus() {
