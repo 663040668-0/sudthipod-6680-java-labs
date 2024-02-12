@@ -16,7 +16,7 @@ import javax.swing.*;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 29/01/2024
+ * Latest Update: 12/02/2024
  */
 
 public class PlayerFormV5 extends PlayerFormV4 {
@@ -29,11 +29,11 @@ public class PlayerFormV5 extends PlayerFormV4 {
     }
 
     public static void main(String[] args) {
-            SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    createAndShowGUI();
-                }
-            });
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
 
     // Pass the contructors to super class (JFrame)
