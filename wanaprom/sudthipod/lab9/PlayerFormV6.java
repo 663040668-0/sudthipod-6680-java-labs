@@ -16,15 +16,16 @@ import java.util.ArrayList;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 12/02/2024
+ * Latest Update: 19/02/2024
  */
 
-public class PlayerFormV6 extends PlayerFormV5 {
+public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     // Main methods
     public static void createAndShowGUI() {
         PlayerFormV6 window = new PlayerFormV6("Player Form V6");
         window.addMenus();
         window.addComponents();
+        window.addListeners();
         window.setFrameFeatures();
     }
 
@@ -49,45 +50,38 @@ public class PlayerFormV6 extends PlayerFormV5 {
     protected final String SUBMIT_DIALOG_TEMPLATE = "%s has nationality as %s and was born on %s, has gender as %s, is a %s player, has hobbies as %s and plays %s";
     protected final String TEXTFIELD_DIALOG_TEMPLATE = "%s is changed to %s";
 
-    protected ActionListener actionListener;
-
     // Object methods
     @Override
     protected void addComponents() {
         super.addComponents();
 
-        // Initialize ActionListener object to handle events from components
-        createActionListeners();
-
-        // Set name of each TextField
+        // Set name of each TextField to be use later in actionPerformed method
         nameField.setName("Name");
         nationalityField.setName("Nationality");
         birthDateField.setName("Date of Birth");
-
-        // Add listener to buttons and TextField forms
-        resetButton.addActionListener(actionListener);
-        submitButton.addActionListener(actionListener);
-        nameField.addActionListener(actionListener);
-        nationalityField.addActionListener(actionListener);
-        birthDateField.addActionListener(actionListener);
     }
 
-    protected void createActionListeners() {
-        // Initialize ActionListener object to handle events from components
-        actionListener = (new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Object src = e.getSource();
-                if (src == resetButton) {
-                    handleResetButton();
-                } else if (src == submitButton) {
-                    handleSubmitButton();
-                } else if (src instanceof JTextField) {
-                    // NOTE: 'instanceof' is a 'class' checking operator
-                    handleTextField((JTextField) src);
-                }
-            }
-        });
+    protected void addListeners() {
+        // Add listener to buttons and TextField forms
+        resetButton.addActionListener(this);
+        submitButton.addActionListener(this);
+        nameField.addActionListener(this);
+        nationalityField.addActionListener(this);
+        birthDateField.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Actions to perform when JButtons and JTextfields get interacted
+        Object src = e.getSource();
+        if (src == resetButton) {
+            handleResetButton();
+        } else if (src == submitButton) {
+            handleSubmitButton();
+        } else if (src instanceof JTextField) {
+            // NOTE: 'instanceof' is a 'class' checking operator
+            handleTextField((JTextField) src);
+        }
     }
 
     protected void showMessageDialog(String message) {

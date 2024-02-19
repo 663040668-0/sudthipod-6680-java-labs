@@ -13,15 +13,16 @@ import java.awt.event.*;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 12/02/2024
+ * Latest Update: 19/02/2024
  */
 
-public class PlayerFormV7 extends PlayerFormV6 {
+public class PlayerFormV7 extends PlayerFormV6 implements ItemListener {
     // Main methods
     public static void createAndShowGUI() {
         PlayerFormV7 window = new PlayerFormV7("Player Form V7");
         window.addMenus();
         window.addComponents();
+        window.addListeners();
         window.setFrameFeatures();
     }
 
@@ -48,38 +49,28 @@ public class PlayerFormV7 extends PlayerFormV6 {
     protected final String HOBBY_SELECTED_TEXT = "";
     protected final String HOBBY_DESELECTED_TEXT = " no longer";
 
-    protected ItemListener itemListener;
-
     // Object methods
     @Override
-    protected void addComponents() {
-        super.addComponents();
-
-        // Initialize ItemListener object to handle events from components
-        createItemListeners();
+    protected void addListeners() {
+        super.addListeners();
 
         // Add listener to button forms
         for (JRadioButton button : genderForm.getRadioButtons().values()) {
-            button.addItemListener(itemListener);
+            button.addItemListener(this);
         }
         for (JCheckBox checkbox : hobbiesForm.getCheckBoxes().values()) {
-            checkbox.addItemListener(itemListener);
+            checkbox.addItemListener(this);
         }
     }
 
-    protected void createItemListeners() {
-        // Initialize ActionListener object to handle events from components
-        itemListener = (new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                Object src = e.getSource();
-                if (src instanceof JRadioButton && e.getStateChange() == ItemEvent.SELECTED) {
-                    handleGenderButton((JRadioButton) src);
-                } else if (src instanceof JCheckBox) {
-                    handleHobbiesCheckbox((JCheckBox) src);
-                }
-            }
-        });
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        Object src = e.getSource();
+        if (src instanceof JRadioButton && e.getStateChange() == ItemEvent.SELECTED) {
+            handleGenderButton((JRadioButton) src);
+        } else if (src instanceof JCheckBox) {
+            handleHobbiesCheckbox((JCheckBox) src);
+        }
     }
 
     protected void handleGenderButton(JRadioButton button) {
