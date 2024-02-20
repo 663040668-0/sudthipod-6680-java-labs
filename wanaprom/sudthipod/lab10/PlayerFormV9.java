@@ -61,8 +61,11 @@ public class PlayerFormV9 extends PlayerFormV8 implements ChangeListener {
     }
 
     protected void handleExperienceSlider() {
-        int experienceYears = experienceYearForm.getSlider().getValue();
-        // Display the message dialog
-        showMessageDialog(EXPERIENCE_DIALOG_TEMPLATE + experienceYears);
+        // Check if the value stopped increasing
+        if (!experienceYearForm.getSlider().getValueIsAdjusting()) {
+            int experienceYears = experienceYearForm.getSlider().getValue();
+            // Display the message dialog
+            showMessageDialog(EXPERIENCE_DIALOG_TEMPLATE + experienceYears);
+        }
     }
 }
