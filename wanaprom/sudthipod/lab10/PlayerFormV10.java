@@ -89,7 +89,12 @@ public class PlayerFormV10 extends PlayerFormV9 {
     }
 
     protected void handleFileMenuItem(JMenuItem menuItem) {
-        showMessageDialog(FILE_MENU_ITEM_DIALOG_TEMPLATE + menuItem.getText());
+        if (menuItem == exitMenuItem) {
+            // Exit the program entirely
+            System.exit(0);
+        } else {
+            showMessageDialog(FILE_MENU_ITEM_DIALOG_TEMPLATE + menuItem.getText());
+        }
     }
 
     protected void handleColorMenuItem(JMenuItem menuItem) {

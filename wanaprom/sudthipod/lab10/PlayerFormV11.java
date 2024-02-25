@@ -141,6 +141,9 @@ public class PlayerFormV11 extends PlayerFormV10 {
                 // Save the file
                 showMessageDialog("Saving in file \'" + selectedFile.getAbsolutePath()  + "\'");
             }
+        } else if (menuItem == exitMenuItem) {
+            // Exit the program entirely
+            System.exit(0);
         } else {
             // Currently unimplemented
             showMessageDialog(FILE_MENU_ITEM_DIALOG_TEMPLATE + menuItem.getText());
