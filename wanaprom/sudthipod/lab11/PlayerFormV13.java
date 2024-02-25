@@ -80,7 +80,7 @@ public class PlayerFormV13 extends PlayerFormV12 {
             JOptionPane.showMessageDialog(this, "Opening file \'" + selectedFile.getAbsolutePath() + "\'");
 
             // Display the data
-            JOptionPane.showMessageDialog(this, textData);
+            JOptionPane.showMessageDialog(this, "Data read from file: " + selectedFile.getAbsolutePath() + " is\n" + textData);
 
             // NOTE: Using JOptionPane directly to display dialog in desired order
         } catch (Exception e) {
