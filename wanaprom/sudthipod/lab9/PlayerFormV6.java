@@ -118,6 +118,11 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     }
 
     protected void handleSubmitButton() {
+        // Display the message dialog
+        showMessageDialog(getPlayerInfoText());
+    }
+
+    protected String getPlayerInfoText() {
         // Get values from components
         name = nameField.getText();
         nationality = nationalityField.getText();
@@ -133,8 +138,7 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         playerHobbies = String.join(" ", hobbiesList);
         sport = sportForm.getList().getSelectedValuesList().toString();
 
-        // Display the message dialog
-        showMessageDialog(String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport));
+        return String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport);
     }
 
     protected void handleTextField(JTextField textField) {
