@@ -114,32 +114,13 @@ public class PlayerFormV11 extends PlayerFormV10 {
             // Display fileOpener and open a file
             int result = fileOpener.showOpenDialog(this);
             if (result == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = fileOpener.getSelectedFile();
-
-                // Check if the file is really existed
-                if (!selectedFile.exists()) {
-                    showErrorDialog("\'" + selectedFile.getAbsolutePath() + "\' isn't existed");
-                    return;
-                }
-
-                // Open the file
-                showMessageDialog("Opening file \'" + selectedFile.getAbsolutePath() + "\'");
+                handleOpenFile();
             }
         } else if (menuItem == saveMenuItem) {
             // Display fileSaver and Sav a file
             int result = fileSaver.showSaveDialog(this);
             if (result == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = fileSaver.getSelectedFile();
-                // Check if the file is already existed
-                if (selectedFile.exists()) {
-                    boolean overwrite = showOverwriteDialog(selectedFile.getAbsolutePath());
-                    if (!overwrite) {
-                        return; // Exit if user cancels
-                    }
-                }
-
-                // Save the file
-                showMessageDialog("Saving in file \'" + selectedFile.getAbsolutePath()  + "\'");
+                handleSaveFile();
             }
         } else if (menuItem == exitMenuItem) {
             // Exit the program entirely
@@ -148,6 +129,34 @@ public class PlayerFormV11 extends PlayerFormV10 {
             // Currently unimplemented
             showMessageDialog(FILE_MENU_ITEM_DIALOG_TEMPLATE + menuItem.getText());
         }
+    }
+
+    protected void handleOpenFile() {
+        File selectedFile = fileOpener.getSelectedFile();
+
+        // Check if the file is really existed
+        if (!selectedFile.exists()) {
+            showErrorDialog("\'" + selectedFile.getAbsolutePath() + "\' isn't existed");
+            return;
+        }
+
+        // Open the file
+        showMessageDialog("Opening file \'" + selectedFile.getAbsolutePath() + "\'");
+    }
+
+    protected void handleSaveFile() {
+        File selectedFile = fileSaver.getSelectedFile();
+        
+        // Check if the file is already existed
+        if (selectedFile.exists()) {
+            boolean overwrite = showOverwriteDialog(selectedFile.getAbsolutePath());
+            if (!overwrite) {
+                return; // Exit if user cancels
+            }
+        }
+
+        // Save the file
+        showMessageDialog("Saving in file \'" + selectedFile.getAbsolutePath()  + "\'");
     }
 
     protected void handleCustomColorMenuItem() {
