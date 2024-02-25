@@ -50,6 +50,10 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     protected final String SUBMIT_DIALOG_TEMPLATE = "%s has nationality as %s and was born on %s, has gender as %s, is a %s player, has hobbies as %s and plays %s";
     protected final String TEXTFIELD_DIALOG_TEMPLATE = "%s is changed to %s";
 
+    // Value to be reuse in lab11
+    protected String name, nationality, birthDate, gender, playerType, playerHobbies, sport;
+    protected ArrayList<String> hobbiesList;
+
     // Object methods
     @Override
     protected void addComponents() {
@@ -115,19 +119,19 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
 
     protected void handleSubmitButton() {
         // Get values from components
-        String name = nameField.getText();
-        String nationality = nationalityField.getText();
-        String birthDate = birthDateField.getText();
-        String gender = maleButton.isSelected() ? maleButton.getText() : femaleButton.getText();
-        String playerType = playerTypeComboBox.getSelectedItem().toString();
-        ArrayList<String> hobbiesList = new ArrayList<String>();
+        name = nameField.getText();
+        nationality = nationalityField.getText();
+        birthDate = birthDateField.getText();
+        gender = maleButton.isSelected() ? maleButton.getText() : femaleButton.getText();
+        playerType = playerTypeComboBox.getSelectedItem().toString();
+        hobbiesList = new ArrayList<String>();
         for (String hobby : hobbiesForm.getCheckBoxes().keySet()) {
             if (hobbiesForm.getCheckBox(hobby).isSelected()) {
                 hobbiesList.add(hobby);
             }
         }
-        String playerHobbies = String.join(" ", hobbiesList);
-        String sport = sportForm.getList().getSelectedValuesList().toString();
+        playerHobbies = String.join(" ", hobbiesList);
+        sport = sportForm.getList().getSelectedValuesList().toString();
 
         // Display the message dialog
         showMessageDialog(String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport));
