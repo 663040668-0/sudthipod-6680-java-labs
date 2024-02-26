@@ -22,7 +22,7 @@ import javax.swing.*;
 public class PlayerFormV13 extends PlayerFormV12 {
     // Main methods
     public static void createAndShowGUI() {
-        PlayerFormV13 window = new PlayerFormV13("Player Form 12");
+        PlayerFormV13 window = new PlayerFormV13("Player Form 13");
         window.addMenus();
         window.addComponents();
         window.addListeners();
