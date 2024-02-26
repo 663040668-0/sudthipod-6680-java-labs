@@ -185,4 +185,12 @@ public class PlayerFormV14 extends PlayerFormV13 {
             }
         }
     }
+
+    @Override
+    protected void handleResetButton() {
+        // Prevent message dialogs to show up
+        removeListeners();
+        super.handleResetButton();
+        addListeners();
+    }
 }
