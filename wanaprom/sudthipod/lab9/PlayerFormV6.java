@@ -51,8 +51,8 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
     protected final String TEXTFIELD_DIALOG_TEMPLATE = "%s is changed to %s";
 
     // Value to be reuse in lab11
-    protected String name, nationality, birthDate, gender, playerType, playerHobbies, sport;
-    protected ArrayList<String> hobbiesList;
+    protected String name, nationality, birthDate, gender, playerType, playerHobbies;
+    protected ArrayList<String> hobbiesList, selectedSport;
 
     // Object methods
     @Override
@@ -136,9 +136,9 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
             }
         }
         playerHobbies = String.join(" ", hobbiesList);
-        sport = sportForm.getList().getSelectedValuesList().toString();
+        selectedSport = new ArrayList<String>(sportForm.getList().getSelectedValuesList());
 
-        return String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, sport);
+        return String.format(SUBMIT_DIALOG_TEMPLATE, name, nationality, birthDate, gender, playerType, playerHobbies, selectedSport.toString());
     }
 
     protected void handleTextField(JTextField textField) {
