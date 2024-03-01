@@ -8,15 +8,13 @@ import javax.swing.*;
 /**
  * PlayerFormV13:
  * This program is extended from PlayerFormV12.
- * Detect whenever the user press enter in JTextField with empty text then disable next component
- * after the dialog is shown, focus the JTextField for user to input
- * Date Of Birth field is also need to be validated in format <dd-mm-yyyy>
+ * Write to text file when save and can open any text file and show on message dialog
  * 
  * Author: Sudthipod Wanaprom
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 26/02/2024
+ * Latest Update: 01/03/2024
  */
 
 public class PlayerFormV13 extends PlayerFormV12 {
