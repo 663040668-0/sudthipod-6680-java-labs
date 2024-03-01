@@ -18,7 +18,7 @@ import javax.swing.*;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 26/02/2024
+ * Latest Update: 01/03/2024
  */
 
 public class PlayerFormV12 extends PlayerFormV11 {
@@ -69,36 +69,53 @@ public class PlayerFormV12 extends PlayerFormV11 {
     @Override
     protected void handleTextField(JTextField textField) {
         if (textField == birthDateField) {
-            try {
-                // Check date format as dd-mm-yyyy pattern
-                birthDateFormatter.parse(textField.getText());
-            } catch (DateTimeParseException e) {
-                // Show dialog
-                showMessageDialog(INVALID_BIRTHDATE_DIALOG_TEMPLATE + textField.getName());
+            handleBirthDateField();;
+        } else if (textField == nameField) {
+            handleNormalTextField(nameField, nationalityField);   
+        } else if (textField == nationalityField) {
+            handleNormalTextField(nationalityField, birthDateField);
+        }
+    }
 
-                // Focus the text field
-                textField.requestFocusInWindow();
+    protected void handleBirthDateField() {
+        try {
+            // Check date format as dd-mm-yyyy pattern
+            birthDateFormatter.parse(birthDateField.getText());
 
-                return;
-            }
-        } else if (textField.getText().isEmpty()) {
-            // If text field is empty, show dialog
-            showMessageDialog(TEXTFIELD_EMPTY_DIALOG_TEMPLATE + textField.getName());
-
-            // Disable next component
-            if (textField == nameField) nationalityField.setEnabled(false);
-            if (textField == nationalityField) birthDateField.setEnabled(false);
+            // Show message dialog
+            super.handleTextField(birthDateField);
+        } catch (DateTimeParseException e) {
+            // Show dialog
+            showMessageDialog(INVALID_BIRTHDATE_DIALOG_TEMPLATE + birthDateField.getName());
 
             // Focus the text field
-            textField.requestFocusInWindow();
+            birthDateField.requestFocusInWindow();
 
             return;
         }
+    }
 
-        // No error is occurred
-        super.handleTextField(textField);
-        // Enable next back the component
-        if (textField == nameField) nationalityField.setEnabled(true);
-        if (textField == nationalityField) birthDateField.setEnabled(true);
+    protected void handleNormalTextField(JTextField thisTextField, JTextField nextTextField) {
+        if (thisTextField.getText().isEmpty()) {
+            // If text field is empty, show dialog
+            showMessageDialog(TEXTFIELD_EMPTY_DIALOG_TEMPLATE + thisTextField.getName());
+
+            // Disable next component
+            nextTextField.setEnabled(false);
+
+            // Focus this text field
+            thisTextField.requestFocusInWindow();
+
+            return;
+        } else {
+            // Show message dialog
+            super.handleTextField(thisTextField);
+
+            // Enable next back the next component
+            nextTextField.setEnabled(true);
+
+            // Focus next text field
+            nextTextField.requestFocusInWindow();
+        }
     }
 }
