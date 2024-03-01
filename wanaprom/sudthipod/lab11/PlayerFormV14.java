@@ -73,6 +73,7 @@ public class PlayerFormV14 extends PlayerFormV13 {
     @Override
     protected void handleOpenFile() {
         File selectedFile = fileOpener.getSelectedFile();
+        System.out.println("OPEN");
 
         // Check if the file is really existed
         if (!selectedFile.exists()) {
@@ -100,10 +101,13 @@ public class PlayerFormV14 extends PlayerFormV13 {
 
     protected void fillPlayerInfo(Player player) {
         nameField.setText(player.getName());
+        nameField.setEnabled(true);
         
         nationalityField.setText(player.getNationality());
+        nationalityField.setEnabled(true);
 
         birthDateField.setText(player.getBirthDate());
+        birthDateField.setEnabled(true);
 
         if (player.getGender().equals("Male")) {
             maleButton.setSelected(true);
@@ -135,6 +139,18 @@ public class PlayerFormV14 extends PlayerFormV13 {
 
     protected void removeListeners() {
         // Use to temporary remove the listener to prevent message dialogs on file opening
+        newMenuItem.removeActionListener(this);
+        openMenuItem.removeActionListener(this);
+        saveMenuItem.removeActionListener(this);
+        exitMenuItem.removeActionListener(this);
+        redMenuItem.removeActionListener(this);
+        greenMenuItem.removeActionListener(this);
+        blueMenuItem.removeActionListener(this);
+        customColorMenuItem.removeActionListener(this);
+        size16MenuItem.removeActionListener(this);
+        size20MenuItem.removeActionListener(this);
+        size24MenuItem.removeActionListener(this);
+
         nameField.removeActionListener(this);
         nationalityField.removeActionListener(this);
         birthDateField.removeActionListener(this);
