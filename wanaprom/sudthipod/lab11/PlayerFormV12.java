@@ -18,7 +18,7 @@ import javax.swing.*;
  * ID: 663040668-0
  * Sec: 2
  *
- * Latest Update: 01/03/2024
+ * Latest Update: 08/03/2024
  */
 
 public class PlayerFormV12 extends PlayerFormV11 {
@@ -53,7 +53,7 @@ public class PlayerFormV12 extends PlayerFormV11 {
     protected final String TEXTFIELD_EMPTY_DIALOG_TEMPLATE = "Please enter some data in ";
     protected final String INVALID_BIRTHDATE_DIALOG_TEMPLATE = "Please enter a valid date in ";
 
-    protected DateTimeFormatter birthDateFormatter = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+    protected DateTimeFormatter birthDateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     // Object methods
     @Override
